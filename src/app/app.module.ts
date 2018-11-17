@@ -13,7 +13,6 @@ import { WebviewDirective } from './directives/webview.directive';
 import { HomeComponent } from './components/home/home.component';
 import { MainComponent } from './components/main/main.component';
 import { QuizService } from './services/quiz.service';
-import { ReadyGuard } from './guards/ready.guard';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { SoundService } from './services/sound.service';
 import { LoadingBarModule } from '@ngx-loading-bar/core';
@@ -22,6 +21,8 @@ import { ParticlesModule } from 'angular-particle';
 import { GameChooserComponent } from './components/game-chooser/game-chooser.component';
 import { GameChooserGuard } from './guards/game-chooser.guard';
 import { QuestionsAndAnswersComponent } from './components/questions-and-answers/questions-and-answers.component';
+import { SettingsComponent } from './components/settings/settings.component';
+import { FileDropModule } from 'ngx-file-drop';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { QuestionsAndAnswersComponent } from './components/questions-and-answers
     NavigationComponent,
     GameChooserComponent,
     QuestionsAndAnswersComponent,
+    SettingsComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,14 +42,14 @@ import { QuestionsAndAnswersComponent } from './components/questions-and-answers
     HttpClientModule,
     FontAwesomeModule,
     LoadingBarModule.forRoot(),
-    ParticlesModule
+    ParticlesModule,
+    FileDropModule
   ],
   providers: [
     ElectronService,
     WebApiService,
     LocalStorageService,
     QuizService,
-    ReadyGuard,
     SoundService,
     TimerService,
     GameChooserGuard

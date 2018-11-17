@@ -1,6 +1,6 @@
 // MAIN
 
-.content{
+.app-content{
     position: fixed;
     top: 90px;
     right: 0;
@@ -61,6 +61,38 @@
 .time-remaining{
     font-size: $font-xxxl;
     color: rgba(white, 0.8);
+}
+
+// SETTINGS
+
+.settings-wrapper{
+    height: 100%;
+    padding: $padding-md;
+    .header{
+        height: 80px;
+        text-align: center;
+        color: rgba(white, 0.8);
+    }
+    .body{
+        height: calc(100% - 80px)
+    }
+}
+
+.drop-zone-wrapper{
+    @extend .area;
+    border-style: dashed;
+    .drop-zone{
+        height: 100% !important;
+        border: none !important;
+        border-radius: 20px !important;
+        .content{
+            color: rgba(white, 0.8) !important;
+            height: 100% !important;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+        }
+    }
 }
 
 // GAME CHOOSER

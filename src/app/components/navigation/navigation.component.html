@@ -6,8 +6,11 @@
     <button class="btn btn-transparent" (click)="goHome()">
       <fa-icon [icon]="faHome"></fa-icon>
     </button>
-    <button class="btn btn-transparent" *ngIf="isInGame" (click)="goChooser()">
+    <button class="btn btn-transparent" *ngIf="isInGame" (click)="navigate('game-chooser')">
       <fa-icon [icon]="faHandPointUp"></fa-icon>
+    </button>
+    <button class="btn btn-transparent" *ngIf="isInHome" (click)="navigate('settings')">
+      <fa-icon [icon]="faCog"></fa-icon>
     </button>
   </div>
   <div>

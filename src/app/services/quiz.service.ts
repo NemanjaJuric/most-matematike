@@ -12,6 +12,8 @@ export class QuizService {
   ) { }
 
   data;
+
+  private _ready: boolean;
   private _ready$: ReplaySubject<boolean> = new ReplaySubject<boolean>(1);
 
   level: any;
@@ -21,16 +23,16 @@ export class QuizService {
   private _game$: ReplaySubject<any> = new ReplaySubject<any>(1);
 
   private _inGame$: ReplaySubject<boolean> = new ReplaySubject<boolean>(1);
+  private _inHome$: ReplaySubject<boolean> = new ReplaySubject<boolean>(1);
 
-  getData() {
-    this._webApiService.get('assets/data/data.json')
-      .subscribe(data => {
-        this.data = data;
-        this._ready$.next(true);
-      })
+  setData(data: string) {
+    this.data = JSON.parse(data);
+    this._ready = true;
+    this._ready$.next(this._ready);
   }
 
   isReady() {
+    this._ready$.next(this._ready);
     return this._ready$.asObservable();
   }
 
@@ -53,12 +55,20 @@ export class QuizService {
     return this._game$.asObservable();
   }
 
-  inGame(status: boolean){
+  inGame(status: boolean) {
     this._inGame$.next(status);
   }
 
-  isInGame(){
+  isInGame() {
     return this._inGame$.asObservable();
+  }
+
+  inHome(status: boolean) {
+    this._inHome$.next(status);
+  }
+
+  isInHome() {
+    return this._inHome$.asObservable();
   }
 
 }

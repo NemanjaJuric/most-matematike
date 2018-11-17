@@ -1,0 +1,35 @@
+<div class="settings-wrapper">
+  <div class="header">
+    <h1 class="h1">Подешавања</h1>
+  </div>
+  <div class="body">
+    <div class="container-fluid full-height">
+      <div class="row full-height">
+        <div class="col-6 full-height">
+
+          <div class="drop-zone-wrapper">
+            <file-drop (onFileDrop)="dropped($event, 'text')">
+              <div>
+                <fa-icon [icon]="faCogs" class="fa-7x"></fa-icon>
+              </div>
+            </file-drop>
+          </div>
+
+        </div>
+        <div class="col-6 full-height">
+
+          <div class="drop-zone-wrapper">
+            <file-drop (onFileDrop)="dropped($event, 'binary')">
+              <div>
+                <fa-icon [icon]="faFilm" class="fa-7x"></fa-icon>
+                <video id="video" controls width="300" height="150"></video>
+              </div>
+            </file-drop>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

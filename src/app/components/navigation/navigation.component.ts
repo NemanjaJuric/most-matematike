@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faWindowMaximize, faWindowMinimize, faMusic, faHome, faHandPointUp } from '@fortawesome/free-solid-svg-icons';
+import { faWindowMaximize, faWindowMinimize, faMusic, faHome, faHandPointUp, faCog } from '@fortawesome/free-solid-svg-icons';
 import { ElectronService } from 'src/app/services/electron.service';
 import { SoundService } from 'src/app/services/sound.service';
 import { TimerService } from 'src/app/services/timer.service';
@@ -25,6 +25,7 @@ export class NavigationComponent implements OnInit {
   faMusic = faMusic;
   faHome = faHome;
   faHandPointUp = faHandPointUp;
+  faCog = faCog;
 
   fullScreenFlag: boolean = false;
 
@@ -33,12 +34,14 @@ export class NavigationComponent implements OnInit {
   timer: number;
 
   isInGame: boolean = false;
+  isInHome: boolean = false;
 
   ngOnInit() {
     this._getLoaderWidth();
     this._getLoaderColor();
     this._getTimer();
     this._checkIsInGame();
+    this._checkIsInHome();
   }
 
   fullScreen() {
@@ -90,26 +93,33 @@ export class NavigationComponent implements OnInit {
       })
   }
 
-  private _getTimer(){
+  private _getTimer() {
     this._timerService.getTimer()
-    .subscribe(timer => {
-      this.timer = timer;
-    })
+      .subscribe(timer => {
+        this.timer = timer;
+      })
   }
 
-  goHome(){
+  goHome() {
     this._router.navigate([''])
   }
 
-  goChooser(){
-    this._router.navigate(['game-chooser'])
+  navigate(route: string) {
+    this._router.navigate([route]);
   }
 
-  private _checkIsInGame(){
+  private _checkIsInGame() {
     this._quizService.isInGame()
-    .subscribe(inGame => {
-      this.isInGame = inGame;
-    })
+      .subscribe(inGame => {
+        this.isInGame = inGame;
+      })
+  }
+
+  private _checkIsInHome() {
+    this._quizService.isInHome()
+      .subscribe(inHome => {
+        this.isInHome = inHome;
+      })
   }
 
 }

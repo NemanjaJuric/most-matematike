@@ -2,20 +2,23 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './components/main/main.component';
 import { HomeComponent } from './components/home/home.component';
-import { ReadyGuard } from './guards/ready.guard';
 import { GameChooserComponent } from './components/game-chooser/game-chooser.component';
 import { GameChooserGuard } from './guards/game-chooser.guard';
 import { QuestionsAndAnswersComponent } from './components/questions-and-answers/questions-and-answers.component';
+import { SettingsComponent } from './components/settings/settings.component';
 
 const routes: Routes = [
   {
     path: '',
     component: MainComponent,
-    canActivate: [ReadyGuard],
     children: [
       {
         path: '',
         component: HomeComponent
+      },
+      {
+        path: 'settings',
+        component: SettingsComponent
       },
       {
         path: 'game-chooser',

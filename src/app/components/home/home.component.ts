@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
 import { QuizService } from 'src/app/services/quiz.service';
 import { TimerService } from 'src/app/services/timer.service';
 import { Router } from '@angular/router';
@@ -7,11 +7,10 @@ import { Router } from '@angular/router';
   selector: 'app-home',
   templateUrl: './home.component.html',
 })
-export class HomeComponent implements OnInit, AfterViewInit {
+export class HomeComponent implements OnInit, OnDestroy {
 
   constructor(
     private _quizService: QuizService,
-    private _timerService: TimerService,
     private _router: Router
   ) { }
 
@@ -20,9 +19,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
   @ViewChild('heading') heading: ElementRef;
 
   ngOnInit() {
+    this._quizService.inHome(true);
   }
 
-  ngAfterViewInit(){
+  ngOnDestroy(){
+    this._quizService.inHome(false);
   }
 
   goToChooser(level: any) {
