@@ -1,0 +1,98 @@
+// MAIN
+
+.content{
+    position: fixed;
+    top: 90px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+// HOME
+
+.levels-wrapper{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    top: 40%;
+}
+
+.level{
+    @extend .clickable-area;
+    height: 150px;
+    width: 220px;
+    margin: 0 $margin-lg;
+}
+
+// NAVIGATION
+
+.navigation{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: $padding-sm $padding-md;
+    height: 90px;
+    button{
+        color: $light-trans-color;
+        font-size: $font-xxxl;
+        margin: 0 $margin-sm;
+        &:hover{
+            color: white;
+        }
+    }
+}
+
+.loader-wrapper{
+    height: 15px;
+    .loader{
+        height: inherit;
+    }
+}
+
+.time-remaining{
+    font-size: $font-xxxl;
+    color: rgba(white, 0.8);
+}
+
+// GAME CHOOSER
+
+.game-chooser-wrapper{
+    height: 100%;
+    padding: $padding-md 0;
+}   
+
+.game-chooser-item{
+    @extend .clickable-area;
+    margin: 0 $margin-lg;
+    height: 150px;
+    font-size: $font-xxxl;
+}
+
+.game-description{
+    @extend .clickable-area;
+    font-size: $font-xxl;
+    text-align: justify;
+    padding: $padding-md;
+    cursor: auto;
+    &:hover{
+        background-color: rgba(white, 0.1);
+    }
+}
+
+// GAMES
+
+.game-wrapper{
+    height: 100%;
+    .heading{
+        height: 60px;
+        text-align: center;
+        color: rgba(white, 0.8);
+        padding: $padding-sm 0; 
+    }
+    .body{
+        height: calc(100% - 60px);
+        padding: $padding-md 0; 
+    }
+}

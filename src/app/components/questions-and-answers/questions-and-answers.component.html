@@ -1,0 +1,12 @@
+<div #taskWrapper></div>
+<div class="game-wrapper" *ngIf="game && game.tasks">
+    <div class="heading">
+        <h1>{{game.name}}</h1>
+    </div>
+    <div class="body">
+        <button class="btn btn-secondary" (click)="timer(10)">Timer</button>
+        <div *ngFor="let task of game.tasks">
+            <pre>{{task | json}}</pre>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="game-chooser-wrapper" *ngIf="level && level.games">
+  <div class="container-fluid full-height">
+    <div class="row full-height">
+      <div class="col-6 full-height">
+        <div *ngFor="let game of level.games" class="game-chooser-item" (mouseenter)="showDescription(game)" (click)="enterGame(game)">
+          {{game.name}}
+        </div>
+      </div>
+      <div class="col-6 full-height">
+        <div class="game-description">
+          {{description}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

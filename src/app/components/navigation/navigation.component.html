@@ -1,0 +1,24 @@
+<div class="loader-wrapper">
+  <div class="loader" *ngIf="loaderWidth" [style.width.%]="loaderWidth" [style.backgroundColor]="loaderColor"></div>
+</div>
+<div class="navigation d-flex justify-content-between">
+  <div style="width: 200px;">
+    <button class="btn btn-transparent" (click)="goHome()">
+      <fa-icon [icon]="faHome"></fa-icon>
+    </button>
+    <button class="btn btn-transparent" *ngIf="isInGame" (click)="goChooser()">
+      <fa-icon [icon]="faHandPointUp"></fa-icon>
+    </button>
+  </div>
+  <div>
+    <span class="time-remaining" *ngIf="timer">{{timer}}</span>
+  </div>
+  <div style="width: 200px;">
+    <button class="btn btn-transparent" (click)="toggleMusic()">
+      <fa-icon [icon]="faMusic"></fa-icon>
+    </button>
+    <button class="btn btn-transparent" (click)="fullScreen()">
+      <fa-icon [icon]="fullScreenFlag ? faWindowMinimize : faWindowMaximize"></fa-icon>
+    </button>
+  </div>
+</div>

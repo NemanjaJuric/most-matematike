@@ -1,0 +1,27 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    @include no-select;
+}
+
+body{
+    height: 100vh;
+    background-image: radial-gradient($secondary-color, $primary-color);
+    color: white;
+}
+
+.clickable-area{
+    color: rgba(white, 0.8);
+    background-color: rgba(white, 0.1);
+    border: 5px solid rgba(white, 0.3);
+    height: inherit;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    &:hover{
+        background-color: rgba(white, 0.2);
+    }
+}

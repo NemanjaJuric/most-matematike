@@ -1,0 +1,46 @@
+{
+    "levels": [
+        {
+            "id": "1",
+            "name": "Osnovna skola",
+            "games": [
+                {
+                    "id": "1-1",
+                    "type": "questions-answers",
+                    "name": "Pitanja i odgovori",
+                    "description": "Pravila igre igre igre igre igre igre igre igre",
+                    "tasks": [
+                        {
+                            "id": "1-1-1",
+                            "points": 4,
+                            "time": 30,
+                            "name": "Pitanje 1 (tim 1)",
+                            "question": {
+                                "text": "Neki tekst ${1}",
+                                "1": "\\frac{1}{2} + 3"
+                            },
+                            "answer": {
+                                "text": "Neki odgovor ${1}",
+                                "1": "\\frac{1}{2} + 3"
+                            }
+                        },
+                        {
+                            "id": "1-1-2",
+                            "points": 6,
+                            "time": 60,
+                            "name": "Pitanje 2 (tim 1)",
+                            "question": {
+                                "text": "Neki tekst ${1}",
+                                "1": "\\frac{1}{2} + 3"
+                            },
+                            "answer": {
+                                "text": "Neki odgovor ${1}",
+                                "1": "\\frac{1}{2} + 3"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
