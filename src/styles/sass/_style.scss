@@ -10,6 +10,13 @@
 
 // HOME
 
+.home-heading{
+    height: 300px;
+    text-align: center;
+    color: rgba(white, 0.6);
+    letter-spacing: 5px;
+}
+
 .levels-wrapper{
     display: flex;
     justify-content: center;
@@ -113,7 +120,14 @@
 
 .qa-panel{
     @extend .area;
-    font-size: $font-xxl;
     padding: $padding-xl $padding-lg;
-    height: calc(100% - 80px)
+    height: calc(100% - 80px);
+    display: flex;
+    align-items: center;
+    .qa-panel-text{
+        font-size: $font-xxl;
+        @media (min-width: 1280px){
+            font-size: $font-xxxl;
+        }
+    }
 }

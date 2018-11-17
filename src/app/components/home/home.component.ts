@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { QuizService } from 'src/app/services/quiz.service';
 import { TimerService } from 'src/app/services/timer.service';
 import { Router } from '@angular/router';
@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   selector: 'app-home',
   templateUrl: './home.component.html',
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
 
   constructor(
     private _quizService: QuizService,
@@ -17,11 +17,12 @@ export class HomeComponent implements OnInit {
 
   data = this._quizService.data;
 
+  @ViewChild('heading') heading: ElementRef;
+
   ngOnInit() {
   }
 
-  testTimer(seconds) {
-    this._timerService.startTimer(seconds);
+  ngAfterViewInit(){
   }
 
   goToChooser(level: any) {

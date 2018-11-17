@@ -30,6 +30,7 @@ export class QuestionsAndAnswersComponent implements OnInit, OnDestroy {
   question: SafeHtml;
   answer: SafeHtml;
   renderedText: SafeHtml;
+  private _isQuestionShown: boolean = false;
 
   ngOnInit() {
     this._quizService.inGame(true);
@@ -38,6 +39,8 @@ export class QuestionsAndAnswersComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this._quizService.inGame(false);
+    this._deselectAllTasks();
+    this._timerService.stopTimer();
     if (this._gameSubs) {
       this._gameSubs.unsubscribe();
     }
@@ -62,14 +65,26 @@ export class QuestionsAndAnswersComponent implements OnInit, OnDestroy {
         this.answer = this._sanitizer.bypassSecurityTrustHtml(TaskHelper.makeMathText(t.answer));
         this.renderedText = this.question;
         this._timerService.startTimer(t.time);
+        this._isQuestionShown = true;
       } else {
         t.selected = false;
       }
     });
   }
 
+  private _deselectAllTasks(){
+    this.game.tasks.forEach(t => t.selected = false)
+  }
+
   showAnswer(){
-    this.renderedText = this.answer;
+    if(this._isQuestionShown){
+      this.renderedText = this.answer;
+      this._isQuestionShown = false;
+      this._timerService.stopTimer();
+    }else{
+      this.renderedText = this.question;
+      this._isQuestionShown = true;
+    }
   }
 
 }

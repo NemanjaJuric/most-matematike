@@ -47,10 +47,18 @@ export class TimerService {
       } else {
         this._soundService.playFinish();
         this._width$.next(0);
-        this._width$.next(null);
+        this._timer$.next(null);
         this._timerSubs.unsubscribe();
       }
     })
+  }
+
+  stopTimer() {
+    this._width$.next(0);
+    this._timer$.next(null);
+    if (this._timerSubs) {
+      this._timerSubs.unsubscribe();
+    }
   }
 
   getLoaderWidth(): Observable<number> {
@@ -61,7 +69,7 @@ export class TimerService {
     return this._color$.asObservable();
   }
 
-  getTimer(): Observable<number>{
+  getTimer(): Observable<number> {
     return this._timer$.asObservable();
   }
 

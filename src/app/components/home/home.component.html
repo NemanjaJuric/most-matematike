@@ -1,7 +1,9 @@
+<div class="home-heading">
+  <h1 class="display-3">Мост математике</h1>
+</div> 
 <div class="levels-wrapper">
   <div *ngFor="let level of data.levels" class="level" (click)="goToChooser(level)">
-      <h2>{{level.name}}</h2>
+    <h2>{{level.name}}</h2>
   </div>
 </div>
 <br>
-<button class="btn btn-primary" (click)="testTimer(10)">Test timer</button>
