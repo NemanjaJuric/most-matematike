@@ -3,7 +3,9 @@ import { QuizService } from 'src/app/services/quiz.service';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { TimerService } from 'src/app/services/timer.service';
-declare var katex;
+import { TaskHelper } from 'src/app/helpers/task.helper';
+import { SafeHtml, DomSanitizer } from '@angular/platform-browser';
+import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-questions-and-answers',
@@ -14,51 +16,60 @@ export class QuestionsAndAnswersComponent implements OnInit, OnDestroy {
   constructor(
     private _quizService: QuizService,
     private _router: Router,
-    private _timerService: TimerService
+    private _timerService: TimerService,
+    private _sanitizer: DomSanitizer
   ) { }
+
+  faQuestionCircle = faQuestionCircle;
 
   @ViewChild('taskWrapper') taskWrapper: ElementRef
 
   game: any;
   private _gameSubs: Subscription;
 
+  question: SafeHtml;
+  answer: SafeHtml;
+  renderedText: SafeHtml;
+
   ngOnInit() {
     this._quizService.inGame(true);
     this._getGame();
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this._quizService.inGame(false);
-    if(this._gameSubs){
+    if (this._gameSubs) {
       this._gameSubs.unsubscribe();
     }
   }
 
-  private _getGame(){
+  private _getGame() {
     this._gameSubs = this._quizService.getGame()
-    .subscribe(game => {
-      if(game){
-        this.game = game;
-      }else{
-        this._router.navigate(['']);
-      }
-    })
+      .subscribe(game => {
+        if (game) {
+          this.game = game;
+        } else {
+          this._router.navigate(['']);
+        }
+      })
   }
 
-  timer(seconds: number){
-    this._timerService.startTimer(seconds);
+  selectTask(task: any) {
+    this.game.tasks.forEach(t => {
+      if (t.id === task.id) {
+        t.selected = true;
+        this.question = this._sanitizer.bypassSecurityTrustHtml(TaskHelper.makeMathText(t.question));
+        this.answer = this._sanitizer.bypassSecurityTrustHtml(TaskHelper.makeMathText(t.answer));
+        this.renderedText = this.question;
+        this._timerService.startTimer(t.time);
+      } else {
+        t.selected = false;
+      }
+    });
   }
 
-  private _showTask(task) {
-    let text = task.text;
-    for(let prop in task){
-      if(prop !== 'text'){
-        let strForReplace = '${' + prop + '}';
-        let strToReplace = katex.renderToString(task[prop])
-        text = text.replace(strForReplace, strToReplace);
-      }
-    }
-    this.taskWrapper.nativeElement.innerHTML = text;
+  showAnswer(){
+    this.renderedText = this.answer;
   }
 
 }

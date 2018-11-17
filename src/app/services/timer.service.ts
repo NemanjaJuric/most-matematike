@@ -33,7 +33,9 @@ export class TimerService {
     }
     this._timerSubs = this._timer.subscribe(seconds => {
       if (this._startingTime - seconds >= 0) {
-        if (this._startingTime - seconds > this._startingTime / 3) {
+        let warningTime = this._startingTime / 3;
+        warningTime = warningTime > 10 ? 10 : warningTime;
+        if (this._startingTime - seconds > warningTime) {
           this._color$.next(this._color1);
         } else {
           this._color$.next(this._color2);

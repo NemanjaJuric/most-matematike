@@ -10,12 +10,16 @@ body{
     color: white;
 }
 
-.clickable-area{
+.area{
     color: rgba(white, 0.8);
     background-color: rgba(white, 0.1);
     border: 5px solid rgba(white, 0.3);
     height: inherit;
     border-radius: 20px;
+}
+
+.clickable-area{
+    @extend .area;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -23,5 +27,14 @@ body{
     cursor: pointer;
     &:hover{
         background-color: rgba(white, 0.2);
+    }
+}
+
+.btn{
+    color: $light-trans-color;
+    font-size: $font-xxxl;
+    margin: 0 $margin-sm;
+    &:hover{
+        color: white;
     }
 }

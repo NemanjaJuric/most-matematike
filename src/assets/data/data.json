@@ -14,7 +14,7 @@
                             "id": "1-1-1",
                             "points": 4,
                             "time": 30,
-                            "name": "Pitanje 1 (tim 1)",
+                            "name": "Pitanje 1",
                             "question": {
                                 "text": "Neki tekst ${1}",
                                 "1": "\\frac{1}{2} + 3"
@@ -28,9 +28,9 @@
                             "id": "1-1-2",
                             "points": 6,
                             "time": 60,
-                            "name": "Pitanje 2 (tim 1)",
+                            "name": "Pitanje 2 (timsko)",
                             "question": {
-                                "text": "Neki tekst ${1}",
+                                "text": "Neki tekst za drugo pitanje ${1}. Recenica posle formule.",
                                 "1": "\\frac{1}{2} + 3"
                             },
                             "answer": {

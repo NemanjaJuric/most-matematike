@@ -1,3 +1,7 @@
 .full-height{
-    height: inherit;
+    height: 100%;
+}
+
+.scrollable{
+    overflow-y: auto;
 }

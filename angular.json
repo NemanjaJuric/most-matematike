@@ -38,9 +38,12 @@
               "src/styles/css/loader.css",
               "node_modules/bootstrap/dist/css/bootstrap-reboot.min.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/libs/katex/katex.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/libs/katex/katex.js"
+            ]
           },
           "configurations": {
             "production": {

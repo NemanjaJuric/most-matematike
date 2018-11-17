@@ -93,6 +93,27 @@
     }
     .body{
         height: calc(100% - 60px);
-        padding: $padding-md 0; 
+        padding: $padding-sm 0; 
     }
+}
+
+.task{
+    @extend .clickable-area;
+    height: 80px;
+    margin-bottom: $margin-lg;
+    font-size: $font-xl;
+}
+
+.task__selected{
+    background-color: rgba($accent-color, 0.8);
+    &:hover{
+        background-color: rgba($accent-color, 0.9);
+    }
+}
+
+.qa-panel{
+    @extend .area;
+    font-size: $font-xxl;
+    padding: $padding-xl $padding-lg;
+    height: calc(100% - 80px)
 }
