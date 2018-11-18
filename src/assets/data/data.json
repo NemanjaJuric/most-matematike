@@ -81,6 +81,124 @@
                             }
                         }
                     ]
+                },
+                {
+                    "id": "1-3",
+                    "type": "associations",
+                    "route": "associations",
+                    "name": "Математички букет",
+                    "description": "Правила игре Математички букет",
+                    "solution": "konacno resenje",
+                    "columns": [
+                        {
+                            "id": "a",
+                            "name": "A",
+                            "solution": "resenje kolone A",
+                            "fields": [
+                                {
+                                    "id": "a-1",
+                                    "name": "A1",
+                                    "term": "pojam A1"
+                                },
+                                {
+                                    "id": "a-2",
+                                    "name": "A2",
+                                    "term": "pojam A2"
+                                },
+                                {
+                                    "id": "a-3",
+                                    "name": "A3",
+                                    "term": "pojam A3"
+                                },
+                                {
+                                    "id": "a-4",
+                                    "name": "A4",
+                                    "term": "pojam A4"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "b",
+                            "name": "B",
+                            "solution": "resenje kolone B",
+                            "fields": [
+                                {
+                                    "id": "b-1",
+                                    "name": "B1",
+                                    "term": "pojam B1"
+                                },
+                                {
+                                    "id": "b-2",
+                                    "name": "B2",
+                                    "term": "pojam B2"
+                                },
+                                {
+                                    "id": "b-3",
+                                    "name": "B3",
+                                    "term": "pojam B3"
+                                },
+                                {
+                                    "id": "b-4",
+                                    "name": "B4",
+                                    "term": "pojam B4"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "c",
+                            "name": "C",
+                            "solution": "resenje kolone C",
+                            "fields": [
+                                {
+                                    "id": "c-1",
+                                    "name": "C1",
+                                    "term": "pojam C1"
+                                },
+                                {
+                                    "id": "c-2",
+                                    "name": "C2",
+                                    "term": "pojam C2"
+                                },
+                                {
+                                    "id": "c-3",
+                                    "name": "C3",
+                                    "term": "pojam C3"
+                                },
+                                {
+                                    "id": "c-4",
+                                    "name": "C4",
+                                    "term": "pojam C4"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "d",
+                            "name": "D",
+                            "solution": "resenje kolone D",
+                            "fields": [
+                                {
+                                    "id": "d-1",
+                                    "name": "D1",
+                                    "term": "pojam D1"
+                                },
+                                {
+                                    "id": "d-2",
+                                    "name": "D2",
+                                    "term": "pojam D2"
+                                },
+                                {
+                                    "id": "d-3",
+                                    "name": "D3",
+                                    "term": "pojam D3"
+                                },
+                                {
+                                    "id": "d-4",
+                                    "name": "D4",
+                                    "term": "pojam D4"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         }

@@ -2,7 +2,7 @@
 
 .app-content{
     position: fixed;
-    top: 90px;
+    top: 70px;
     right: 0;
     bottom: 0;
     left: 0;
@@ -11,7 +11,7 @@
 // HOME
 
 .home-heading{
-    height: 300px;
+    height: 200px;
     text-align: center;
     color: rgba(white, 0.6);
     letter-spacing: 5px;
@@ -20,9 +20,8 @@
 .levels-wrapper{
     display: flex;
     justify-content: center;
-    position: absolute;
     width: 100%;
-    top: 25%;
+    margin-top: $margin-lg;
 }
 
 .level{
@@ -180,6 +179,71 @@
         video{
             width: 100%;
             height: 100%;
+        }
+    }
+}
+
+// ASSOCIATIONS
+
+.flower{
+    display: inline-block;
+    width: 25%;
+    height: 100%;
+    position: relative;
+    left: -20px;
+    .pistil{
+        background-color: $pistil-background-color;
+        width: 30%;
+        padding-top: 30%;
+        border-radius: 50%;
+        border: 2px solid $pistil-border-color;
+        position: relative;
+        transform: translateX(140%) translateY(120%);
+        cursor: pointer;
+        z-index: 100;
+        span{
+            position: absolute;
+            display: inline-block;
+            top: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: $font-xl;
+        }
+        &:hover{
+            background-color: darken($pistil-background-color, 10%);
+        }
+    }
+    .petal{
+        width: 40%;
+        padding-top: 40%;
+        background-color: $petal-background-color;
+        border-radius: 50%;
+        border: 2px solid $petal-border-color;
+        position: relative;
+        cursor: pointer;
+        z-index: 90;
+        &:nth-child(4n){
+            transform: translateX(90%) translateY(-140%); //3 
+        }
+        &:nth-child(4n+1){
+            transform: translateX(20%) translateY(-300%); //4
+        }
+        &:nth-child(4n+2){
+            transform: translateX(90%) translateY(-60%); //1
+        }
+        &:nth-child(4n+3){
+            transform: translateX(160%) translateY(-100%); //2
+        }
+        span{
+            position: absolute;
+            display: inline-block;
+            top: 35%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: $font-xl;
+        }
+        &:hover{
+            background-color: lighten($petal-background-color, 10%);
         }
     }
 }

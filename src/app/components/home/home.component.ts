@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this._quizService.inHome(true);
     this._getData();
     this._getVideo();
-    // this._quizService.tempSetData();
+    this._quizService.tempSetData();
   }
 
   private _getData() {

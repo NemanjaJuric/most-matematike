@@ -6,6 +6,7 @@ import { GameChooserComponent } from './components/game-chooser/game-chooser.com
 import { GameChooserGuard } from './guards/game-chooser.guard';
 import { QuestionsAndAnswersComponent } from './components/questions-and-answers/questions-and-answers.component';
 import { SettingsComponent } from './components/settings/settings.component';
+import { AssociationsComponent } from './components/associations/associations.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,11 @@ const routes: Routes = [
       {
         path: 'questions-answers',
         component: QuestionsAndAnswersComponent,
+        canActivate: [GameChooserGuard]
+      },
+      {
+        path: 'associations',
+        component: AssociationsComponent,
         canActivate: [GameChooserGuard]
       },
     ]
