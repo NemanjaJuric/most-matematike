@@ -14,30 +14,41 @@ export class HomeComponent implements OnInit, OnDestroy {
     private _router: Router
   ) { }
 
-  data = this._quizService.data;
-
-  configLoaded: boolean = false;
-  videoLoaded: boolean = false;
+  data: any;
+  configLoaded: boolean = true;
+  videoLoaded: boolean = true;
 
   @ViewChild('heading') heading: ElementRef;
 
   ngOnInit() {
     this._quizService.inHome(true);
-    this._checkLoadedFiles();
+    this._getData();
+    this._getVideo();
+    this._quizService.tempSetData();
   }
 
-  ngOnDestroy(){
+  private _getData() {
+    this._quizService.getData()
+      .subscribe(data => {
+        this.data = data;
+        this.configLoaded = this.data ? true : false;
+      })
+  }
+
+  private _getVideo(){
+    this._quizService.getVideo()
+    .subscribe(video => {
+      this.videoLoaded = video ? true : false;
+    })
+  }
+
+  ngOnDestroy() {
     this._quizService.inHome(false);
   }
 
   goToChooser(level: any) {
     this._quizService.setLevel(level);
     this._router.navigate(['game-chooser']);
-  }
-
-  private _checkLoadedFiles(){
-    this.configLoaded = this._quizService.data ? true : false;
-    this.videoLoaded = this._quizService.video ? true : false;
   }
 
 }
