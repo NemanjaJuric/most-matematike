@@ -1,4 +1,6 @@
 {
+    "name": "Мост математике",
+    "description": "Школско такмичење 2018/2019",
     "levels": [
         {
             "id": "1",
@@ -7,8 +9,48 @@
                 {
                     "id": "1-1",
                     "type": "questions-answers",
-                    "name": "Pitanja i odgovori",
-                    "description": "Pravila igre igre igre igre igre igre igre igre",
+                    "route": "questions-answers",
+                    "video": false,
+                    "name": "Питања и одговори",
+                    "description": "Правила игре Питања и одговори",
+                    "tasks": [
+                        {
+                            "id": "1-1-1",
+                            "points": 4,
+                            "time": 30,
+                            "name": "Pitanje 1",
+                            "question": {
+                                "text": "Neki tekst ${1}",
+                                "1": "\\frac{1}{2} + 3"
+                            },
+                            "answer": {
+                                "text": "Neki odgovor ${1}",
+                                "1": "\\frac{1}{2} + 3"
+                            }
+                        },
+                        {
+                            "id": "1-1-2",
+                            "points": 6,
+                            "time": 60,
+                            "name": "Pitanje 2 (timsko)",
+                            "question": {
+                                "text": "Neki tekst za drugo pitanje ${1}. Recenica posle formule.",
+                                "1": "\\frac{1}{2} + 3"
+                            },
+                            "answer": {
+                                "text": "Neki odgovor ${1}",
+                                "1": "\\frac{1}{2} + 3"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "1-2",
+                    "type": "video-questions",
+                    "route": "questions-answers",
+                    "video": true,
+                    "name": "Видео игра",
+                    "description": "Правила Видео игре",
                     "tasks": [
                         {
                             "id": "1-1-1",

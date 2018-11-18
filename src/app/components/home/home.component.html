@@ -1,12 +1,24 @@
 <div class="home-heading">
-  <h1 class="display-3">Мост математике</h1>
-  <h3 class="h3" *ngIf="!configLoaded">Конфигурација није учитана</h3>
-  <h3 class="h3" *ngIf="!videoLoaded">Видео није учитан</h3>
+  <h1 class="display-3" *ngIf="data && data.name">{{data.name}}</h1>
+  <h3 class="h3 warning-color" *ngIf="!configLoaded">Конфигурација није учитана</h3>
+  <h3 class="h3 warning-color" *ngIf="!videoLoaded">Видео није учитан</h3>
+  <fa-icon *ngIf="!configLoaded || !videoLoaded" [icon]="faExclamationTriangle" class="fa-5x warning-color"></fa-icon>
+  <p *ngIf="!configLoaded || !videoLoaded" class="lead">Молимо учитајте садржај кликом на дугме за подешавања <fa-icon [icon]="faCog"></fa-icon></p>
 </div>
-
 <div class="levels-wrapper" *ngIf="data && data.levels && configLoaded && videoLoaded">
   <div *ngFor="let level of data.levels" class="level" (click)="goToChooser(level)">
     <h2>{{level.name}}</h2>
   </div>
 </div>
-<br>
+
+<div class="home-footer" *ngIf="data && data.description">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <div class="footer-body">
+          <span>{{data.description}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

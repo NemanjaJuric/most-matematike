@@ -23,7 +23,6 @@ import { GameChooserGuard } from './guards/game-chooser.guard';
 import { QuestionsAndAnswersComponent } from './components/questions-and-answers/questions-and-answers.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { FileDropModule } from 'ngx-file-drop';
-import { VideoQuestionsComponent } from './components/video-questions/video-questions.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +35,6 @@ import { VideoQuestionsComponent } from './components/video-questions/video-ques
     GameChooserComponent,
     QuestionsAndAnswersComponent,
     SettingsComponent,
-    VideoQuestionsComponent,
   ],
   imports: [
     BrowserModule,

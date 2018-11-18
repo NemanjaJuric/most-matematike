@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, OnDestroy, Renderer2 } from '@angular/core';
 import { QuizService } from 'src/app/services/quiz.service';
 import { Subscription } from 'rxjs';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { TimerService } from 'src/app/services/timer.service';
 import { TaskHelper } from 'src/app/helpers/task.helper';
 import { SafeHtml, DomSanitizer } from '@angular/platform-browser';
@@ -16,13 +16,15 @@ export class QuestionsAndAnswersComponent implements OnInit, OnDestroy {
   constructor(
     private _quizService: QuizService,
     private _router: Router,
+    private _activatedRoute: ActivatedRoute,
     private _timerService: TimerService,
-    private _sanitizer: DomSanitizer
+    private _sanitizer: DomSanitizer,
   ) { }
 
   faQuestionCircle = faQuestionCircle;
 
   @ViewChild('taskWrapper') taskWrapper: ElementRef
+  @ViewChild('videoWrapper') videoWrapper: ElementRef
 
   game: any;
   private _gameSubs: Subscription;
@@ -32,9 +34,15 @@ export class QuestionsAndAnswersComponent implements OnInit, OnDestroy {
   renderedText: SafeHtml;
   private _isQuestionShown: boolean = false;
 
+  video: any;
+  videoSelected: boolean = false;
+  hasVideo: boolean = false;
+  videoSrc: any;
+
   ngOnInit() {
     this._quizService.inGame(true);
     this._getGame();
+    this._hasVideo();
   }
 
   ngOnDestroy() {
@@ -70,21 +78,44 @@ export class QuestionsAndAnswersComponent implements OnInit, OnDestroy {
         t.selected = false;
       }
     });
+    this.videoSelected = false;
   }
 
-  private _deselectAllTasks(){
+  private _deselectAllTasks() {
     this.game.tasks.forEach(t => t.selected = false)
   }
 
-  showAnswer(){
-    if(this._isQuestionShown){
+  showAnswer() {
+    if (this._isQuestionShown) {
       this.renderedText = this.answer;
       this._isQuestionShown = false;
       this._timerService.stopTimer();
-    }else{
+    } else {
       this.renderedText = this.question;
       this._isQuestionShown = true;
     }
+  }
+
+  // VIDEO
+
+  private _hasVideo() {
+    this._activatedRoute.queryParams.subscribe(params => {
+      this.hasVideo = params && params.video == 'true';
+    })
+  }
+
+  selectVideo() {
+    this.videoSelected = true;
+    this._timerService.stopTimer();
+    this._deselectAllTasks();
+    this._quizService.getVideo()
+      .subscribe(video => {
+        let url = URL.createObjectURL(video);
+        let t = setTimeout(() => {
+          this.videoWrapper.nativeElement.src = url;
+          t = null;
+        }, 0);
+      })
   }
 
 }

@@ -1,7 +1,7 @@
-import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
 import { QuizService } from 'src/app/services/quiz.service';
-import { TimerService } from 'src/app/services/timer.service';
 import { Router } from '@angular/router';
+import { faExclamationTriangle, faCog } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-home',
@@ -14,9 +14,12 @@ export class HomeComponent implements OnInit, OnDestroy {
     private _router: Router
   ) { }
 
+  faExclamationTriangle = faExclamationTriangle;
+  faCog = faCog;
+
   data: any;
-  configLoaded: boolean = true;
-  videoLoaded: boolean = true;
+  configLoaded: boolean = false;
+  videoLoaded: boolean = false;
 
   @ViewChild('heading') heading: ElementRef;
 
@@ -24,7 +27,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this._quizService.inHome(true);
     this._getData();
     this._getVideo();
-    this._quizService.tempSetData();
+    // this._quizService.tempSetData();
   }
 
   private _getData() {

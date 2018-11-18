@@ -7,6 +7,9 @@
         <div class="container-fluid full-height">
             <div class="row full-height">
                 <div class="col-3 full-height scrollable">
+                    <div class="task" *ngIf="hasVideo" (click)="selectVideo()" [ngClass]="{'task__selected': videoSelected}">
+                        Видео
+                    </div>
                     <div *ngFor="let task of game.tasks">
                         <div class="task" (click)="selectTask(task)" [ngClass]="{'task__selected': task.selected}">
                             {{task.name}}
@@ -15,7 +18,10 @@
                 </div>
                 <div class="col-9 full-height">
                     <div class="qa-panel">
-                        <div class="qa-panel-text" [innerHtml]="renderedText"></div>
+                        <div *ngIf="videoSelected" class="qa-panel-text">
+                            <video #videoWrapper controls></video>
+                        </div>
+                        <div *ngIf="!videoSelected" class="qa-panel-text" [innerHtml]="renderedText"></div>
                     </div>
                     <div class="text-right">
                         <button class="btn btn-transparent" (click)="showAnswer()">

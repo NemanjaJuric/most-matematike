@@ -20,20 +20,20 @@ export class GameChooserComponent implements OnInit {
     this._getLevel();
   }
 
-  private _getLevel(){
+  private _getLevel() {
     this._quizService.getLevel()
-    .subscribe(l => {
-      this.level = l;
-    })
+      .subscribe(l => {
+        this.level = l;
+      })
   }
 
-  showDescription(game: any){
+  showDescription(game: any) {
     this.description = game.description;
   }
 
-  enterGame(game: any){
+  enterGame(game: any) {
     this._quizService.setGame(game);
-    this._router.navigate([game.type]);
+    this._router.navigate([game.route], { queryParams: { video: game.video } });
   }
 
 }

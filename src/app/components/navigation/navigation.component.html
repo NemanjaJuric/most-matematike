@@ -2,7 +2,7 @@
   <div class="loader" *ngIf="loaderWidth" [style.width.%]="loaderWidth" [style.backgroundColor]="loaderColor"></div>
 </div>
 <div class="navigation d-flex justify-content-between">
-  <div style="width: 200px;">
+  <div style="width: 300px">
     <button class="btn btn-transparent" (click)="goHome()">
       <fa-icon [icon]="faHome"></fa-icon>
     </button>
@@ -16,7 +16,7 @@
   <div>
     <span class="time-remaining" *ngIf="timer">{{timer}}</span>
   </div>
-  <div style="width: 200px;">
+  <div style="width: 300px" class="text-right">
     <button class="btn btn-transparent" (click)="toggleMusic()">
       <fa-icon [icon]="faMusic"></fa-icon>
     </button>

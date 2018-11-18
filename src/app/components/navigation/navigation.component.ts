@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faWindowMaximize, faWindowMinimize, faMusic, faHome, faHandPointUp, faCog } from '@fortawesome/free-solid-svg-icons';
+import { faWindowMaximize, faWindowMinimize, faMusic, faHome, faHandPointUp, faCog, faUserFriends } from '@fortawesome/free-solid-svg-icons';
 import { ElectronService } from 'src/app/services/electron.service';
 import { SoundService } from 'src/app/services/sound.service';
 import { TimerService } from 'src/app/services/timer.service';
@@ -26,6 +26,7 @@ export class NavigationComponent implements OnInit {
   faHome = faHome;
   faHandPointUp = faHandPointUp;
   faCog = faCog;
+  faUserFriends = faUserFriends;
 
   fullScreenFlag: boolean = false;
 
