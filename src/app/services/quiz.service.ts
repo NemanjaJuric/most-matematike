@@ -12,9 +12,7 @@ export class QuizService {
   ) { }
 
   data;
-
-  private _ready: boolean;
-  private _ready$: ReplaySubject<boolean> = new ReplaySubject<boolean>(1);
+  video;
 
   level: any;
   private _level$: ReplaySubject<any> = new ReplaySubject<any>(1);
@@ -27,13 +25,10 @@ export class QuizService {
 
   setData(data: string) {
     this.data = JSON.parse(data);
-    this._ready = true;
-    this._ready$.next(this._ready);
   }
 
-  isReady() {
-    this._ready$.next(this._ready);
-    return this._ready$.asObservable();
+  setVideo(arrayBuffer: ArrayBuffer){
+    this.video = new Blob([arrayBuffer]);
   }
 
   setLevel(level: any) {
