@@ -247,3 +247,57 @@
         }
     }
 }
+
+.ribbon{
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    width: 50%;
+    height: 20%;
+    transform: translateX(-50%);
+    .knot{
+        display: inline-block;
+        width: 20%;
+        padding-top: 20%;
+        background-color: $petal-background-color;
+        border: 2px solid $petal-border-color;
+        border-radius: 50%;
+        position: relative;
+        left: 50%;
+        text-align: center;
+        transform: translateX(-50%);
+        cursor: pointer;
+        z-index: 100;
+        span{
+            position: absolute;
+            display: inline-block;
+            font-size: $font-xl;
+            top: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        &:hover{
+            background-color: lighten($petal-background-color, 10%);
+        }
+    }
+    .left-part{
+        width: 30%;
+        height: 80%;
+        background-color: $petal-background-color;
+        border: 2px solid $petal-border-color;
+        border-radius: 50%;
+        position: relative;
+        transform: translateX(50%) translateY(-110%);
+        z-index: 90;
+    }
+    .right-part{
+        width: 30%;
+        height: 80%;
+        background-color: $petal-background-color;
+        border: 2px solid $petal-border-color;
+        border-radius: 50%;
+        position: relative;
+        transform: translateX(180%) translateY(-210%);
+        z-index: 90;
+    }
+}

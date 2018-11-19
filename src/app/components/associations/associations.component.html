@@ -1,18 +1,24 @@
 <div class="game-wrapper" *ngIf="game">
   <div class="heading">
-      <h1>{{game.name}}</h1>
+    <h1>{{game.name}}</h1>
   </div>
   <div class="body">
-     
-    <div class="flower" *ngFor="let column of game.columns">
 
+    <div class="flower" *ngFor="let column of game.columns">
       <div class="pistil">
         <span>{{column.name}}</span>
       </div>
       <div class="petal" *ngFor="let field of column.fields">
         <span>{{field.name}}</span>
       </div>
+    </div>
 
+    <div class="ribbon">
+      <div class="knot">
+          <span>Коначно</span>
+      </div>
+      <div class="left-part"></div>
+      <div class="right-part"></div>
     </div>
 
   </div>
