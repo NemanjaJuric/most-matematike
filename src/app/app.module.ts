@@ -17,7 +17,6 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { SoundService } from './services/sound.service';
 import { LoadingBarModule } from '@ngx-loading-bar/core';
 import { TimerService } from './services/timer.service';
-import { ParticlesModule } from 'angular-particle';
 import { GameChooserComponent } from './components/game-chooser/game-chooser.component';
 import { GameChooserGuard } from './guards/game-chooser.guard';
 import { QuestionsAndAnswersComponent } from './components/questions-and-answers/questions-and-answers.component';
@@ -44,7 +43,6 @@ import { AssociationsComponent } from './components/associations/associations.co
     HttpClientModule,
     FontAwesomeModule,
     LoadingBarModule.forRoot(),
-    ParticlesModule,
     FileDropModule
   ],
   providers: [
