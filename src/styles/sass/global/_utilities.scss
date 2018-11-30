@@ -9,3 +9,8 @@
 .warning-color{
     color: $accent-color;
 }
+
+.animated-panel{
+    animation: 'panel';
+    animation-duration: 0.5s;
+}

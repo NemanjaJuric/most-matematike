@@ -2,7 +2,7 @@
   <div class="heading">
     <h1>{{game.name}}</h1>
   </div>
-  <div class="body">
+  <div class="body" *ngIf="!showWindow">
 
     <div class="flower" *ngFor="let column of game.columns">
       <div class="pistil" (click)="showTerm(column)" [ngClass]="{'opened-field': column.opened}">
@@ -12,14 +12,34 @@
         <span>{{field.value}}</span>
       </div>
     </div>
-
     <div class="ribbon">
       <div class="knot" (click)="finalSolution()">
-          <span>{{final}}</span>
+        <span>{{final}}</span>
       </div>
       <div class="left-part"></div>
       <div class="right-part"></div>
     </div>
 
   </div>
+
+  <div class="body" *ngIf="showWindow">
+
+    <div class="associations-question-window qa-panel animated-panel">
+      <div *ngIf="showWindow" class="qa-panel-text" [innerHtml]="renderedText"></div>
+    </div>
+
+    <div class="float-left">
+      <button class="btn btn-transparent" (click)="showAssociations()" title="Назад">
+        <fa-icon [icon]="faArrowLeft"></fa-icon>
+      </button>
+    </div>
+    <div class="float-right text-right">
+      <button class="btn btn-transparent" (click)="showAnswer()" title="Одговор">
+        <fa-icon [icon]="faQuestionCircle"></fa-icon>
+      </button>
+    </div>
+
+  </div>
+
+
 </div>

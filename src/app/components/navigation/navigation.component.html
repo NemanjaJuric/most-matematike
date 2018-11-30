@@ -3,13 +3,13 @@
 </div>
 <div class="navigation d-flex justify-content-between">
   <div style="width: 300px">
-    <button class="btn btn-transparent" (click)="goHome()">
+    <button class="btn btn-transparent" (click)="goHome()" title="Почетни екран">
       <fa-icon [icon]="faHome"></fa-icon>
     </button>
-    <button class="btn btn-transparent" *ngIf="isInGame" (click)="navigate('game-chooser')">
+    <button class="btn btn-transparent" *ngIf="isInGame" (click)="navigate('game-chooser')" title="Игре">
       <fa-icon [icon]="faHandPointUp"></fa-icon>
     </button>
-    <button class="btn btn-transparent" *ngIf="isInHome" (click)="navigate('settings')">
+    <button class="btn btn-transparent" *ngIf="isInHome" (click)="navigate('settings')" title="Подешавања">
       <fa-icon [icon]="faCog"></fa-icon>
     </button>
   </div>
@@ -17,10 +17,10 @@
     <span class="time-remaining" *ngIf="timer">{{timer}}</span>
   </div>
   <div style="width: 300px" class="text-right">
-    <button class="btn btn-transparent" (click)="toggleMusic()">
+    <button class="btn btn-transparent" (click)="toggleMusic()" title="Музика">
       <fa-icon [icon]="faMusic"></fa-icon>
     </button>
-    <button class="btn btn-transparent" (click)="fullScreen()">
+    <button class="btn btn-transparent" (click)="fullScreen()" title="Величина прозора">
       <fa-icon [icon]="fullScreenFlag ? faWindowMinimize : faWindowMaximize"></fa-icon>
     </button>
   </div>
