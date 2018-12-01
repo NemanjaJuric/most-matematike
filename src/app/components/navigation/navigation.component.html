@@ -2,7 +2,7 @@
   <div class="loader" *ngIf="loaderWidth" [style.width.%]="loaderWidth" [style.backgroundColor]="loaderColor"></div>
 </div>
 <div class="navigation d-flex justify-content-between">
-  <div style="width: 300px">
+  <div style="width: 350px">
     <button class="btn btn-transparent" (click)="goHome()" title="Почетни екран">
       <fa-icon [icon]="faHome"></fa-icon>
     </button>
@@ -12,11 +12,14 @@
     <button class="btn btn-transparent" *ngIf="isInHome" (click)="navigate('settings')" title="Подешавања">
       <fa-icon [icon]="faCog"></fa-icon>
     </button>
+    <button class="btn btn-transparent" *ngIf="isInHome" (click)="download()" title="Преузми апликацију">
+      <fa-icon [icon]="faDownload"></fa-icon>
+    </button>
   </div>
   <div>
     <span class="time-remaining" *ngIf="timer">{{timer}}</span>
   </div>
-  <div style="width: 300px" class="text-right">
+  <div style="width: 350px" class="text-right">
     <button class="btn btn-transparent" (click)="toggleMusic()" title="Музика">
       <fa-icon [icon]="faMusic"></fa-icon>
     </button>

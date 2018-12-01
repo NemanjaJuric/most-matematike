@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faWindowMaximize, faWindowMinimize, faMusic, faHome, faHandPointUp, faCog, faUserFriends } from '@fortawesome/free-solid-svg-icons';
+import { faWindowMaximize, faWindowMinimize, faMusic, faHome, faHandPointUp, faCog, faUserFriends, faDownload } from '@fortawesome/free-solid-svg-icons';
 import { ElectronService } from 'src/app/services/electron.service';
 import { SoundService } from 'src/app/services/sound.service';
 import { TimerService } from 'src/app/services/timer.service';
@@ -27,6 +27,7 @@ export class NavigationComponent implements OnInit {
   faHandPointUp = faHandPointUp;
   faCog = faCog;
   faUserFriends = faUserFriends;
+  faDownload = faDownload;
 
   fullScreenFlag: boolean = false;
 
@@ -121,6 +122,16 @@ export class NavigationComponent implements OnInit {
       .subscribe(inHome => {
         this.isInHome = inHome;
       })
+  }
+
+  download() {
+    var element = document.createElement('a');
+    element.setAttribute('href', 'most-matematike.exe');
+    element.setAttribute('download', 'most-matematike.exe');
+    element.style.display = 'none';
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
   }
 
 }
