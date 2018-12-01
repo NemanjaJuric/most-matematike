@@ -27,7 +27,7 @@ export class QuizService {
   private _inHome$: ReplaySubject<boolean> = new ReplaySubject<boolean>(1);
 
   tempSetData() {
-    this._webApiService.get('assets/data/data.json')
+    this._webApiService.get('assets/config/configuration.json')
       .subscribe(data => {
         this.setData(JSON.stringify(data));
       })

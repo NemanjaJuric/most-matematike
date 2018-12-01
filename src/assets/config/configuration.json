@@ -11,8 +11,8 @@
                     "type": "questions-answers",
                     "route": "questions-answers",
                     "video": false,
-                    "name": "Питања и одговори",
-                    "description": "Правила игре Питања и одговори",
+                    "name": "Математичке питалице",
+                    "description": "Правила игре Математичке питалице",
                     "tasks": [
                         {
                             "id": "1-1-1",
@@ -49,8 +49,10 @@
                     "type": "video-questions",
                     "route": "questions-answers",
                     "video": true,
-                    "name": "Видео игра",
-                    "description": "Правила Видео игре",
+                    "videoUrl": "",
+                    "videoUrlYouTube": "",
+                    "name": "Геометријски изазов",
+                    "description": "Правила игре Геометријски изазов",
                     "tasks": [
                         {
                             "id": "1-1-1",
@@ -89,6 +91,7 @@
                     "name": "Математички букет",
                     "description": "Правила игре Математички букет",
                     "solution": "konacno resenje",
+                    "time": 15,
                     "columns": [
                         {
                             "id": "a",
@@ -146,6 +149,18 @@
                                         "text": "Neki odgovor ${1}",
                                         "1": "\\frac{1}{2} + 3"
                                     }
+                                }
+                            ],
+                            "helps": [
+                                {
+                                    "id": "a-h-1",
+                                    "name": "P1",
+                                    "term": "Појам за помоћ"
+                                },
+                                {
+                                    "id": "a-h-2",
+                                    "name": "P2",
+                                    "term": "Појам за помоћ"
                                 }
                             ]
                         },
@@ -206,6 +221,18 @@
                                         "1": "\\frac{1}{2} + 3"
                                     }
                                 }
+                            ],
+                            "helps": [
+                                {
+                                    "id": "b-h-1",
+                                    "name": "P3",
+                                    "term": "Појам за помоћ"
+                                },
+                                {
+                                    "id": "b-h-2",
+                                    "name": "P4",
+                                    "term": "Појам за помоћ"
+                                }
                             ]
                         },
                         {
@@ -265,6 +292,18 @@
                                         "1": "\\frac{1}{2} + 3"
                                     }
                                 }
+                            ],
+                            "helps": [
+                                {
+                                    "id": "c-h-1",
+                                    "name": "P5",
+                                    "term": "Појам за помоћ"
+                                },
+                                {
+                                    "id": "c-h-2",
+                                    "name": "P6",
+                                    "term": "Појам за помоћ"
+                                }
                             ]
                         },
                         {
@@ -323,6 +362,18 @@
                                         "text": "Neki odgovor ${1}",
                                         "1": "\\frac{1}{2} + 3"
                                     }
+                                }
+                            ],
+                            "helps": [
+                                {
+                                    "id": "d-h-1",
+                                    "name": "P7",
+                                    "term": "Појам за помоћ"
+                                },
+                                {
+                                    "id": "d-h-2",
+                                    "name": "P8",
+                                    "term": "Појам за помоћ"
                                 }
                             ]
                         }

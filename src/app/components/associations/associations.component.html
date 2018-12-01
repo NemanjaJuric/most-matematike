@@ -2,6 +2,9 @@
   <div class="heading">
     <h1>{{game.name}}</h1>
   </div>
+
+  <canvas id="stalk" [ngClass]="{'hidden': showWindow, 'visible': !showWindow}"></canvas>
+
   <div class="body" *ngIf="!showWindow">
 
     <div class="flower" *ngFor="let column of game.columns">
@@ -10,6 +13,9 @@
       </div>
       <div class="petal" *ngFor="let field of column.fields" (click)="showQuestion(field)" [ngClass]="{'opened-field': field.opened}">
         <span>{{field.value}}</span>
+      </div>
+      <div class="leaf" *ngFor="let help of column.helps" (click)="revealHelp(help)">
+        <span>{{help.value}}</span>
       </div>
     </div>
     <div class="ribbon">

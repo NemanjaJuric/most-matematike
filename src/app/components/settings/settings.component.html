@@ -9,8 +9,9 @@
 
           <div class="drop-zone-wrapper">
             <file-drop (onFileDrop)="dropped($event, 'text')">
-              <div>
+              <div class="text-center">
                 <fa-icon *ngIf="!dataName" [icon]="faCogs" class="fa-7x"></fa-icon>
+                <h1 class="h1">Конфигурација</h1>
                 <span *ngIf="dataName">{{dataName}}</span>
               </div>
             </file-drop>
@@ -21,8 +22,9 @@
 
           <div class="drop-zone-wrapper">
             <file-drop (onFileDrop)="dropped($event, 'binary')">
-              <div>
+              <div class="text-center">
                 <fa-icon *ngIf="!videoName" [icon]="faFilm" class="fa-7x"></fa-icon>
+                <h1 class="h1">Видео</h1>
                 <span *ngIf="videoName">{{videoName}}</span>
               </div>
             </file-drop>
