@@ -19,14 +19,12 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   data: any;
   configLoaded: boolean = false;
-  videoLoaded: boolean = false;
 
   @ViewChild('heading') heading: ElementRef;
 
   ngOnInit() {
     this._quizService.inHome(true);
     this._getData();
-    this._getVideo();
     this._quizService.tempSetData();
   }
 
@@ -36,13 +34,6 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.data = data;
         this.configLoaded = this.data ? true : false;
       })
-  }
-
-  private _getVideo(){
-    this._quizService.getVideo()
-    .subscribe(video => {
-      this.videoLoaded = video ? true : false;
-    })
   }
 
   ngOnDestroy() {

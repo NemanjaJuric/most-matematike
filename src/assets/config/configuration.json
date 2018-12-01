@@ -1,6 +1,8 @@
 {
     "name": "Мост математике",
     "description": "Школско такмичење 2018/2019",
+    "videoUrl": "",
+    "videoUrlYouTube": "",
     "levels": [
         {
             "id": "1",
