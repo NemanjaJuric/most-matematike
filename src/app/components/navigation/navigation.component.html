@@ -12,7 +12,7 @@
     <button class="btn btn-transparent" *ngIf="isInHome" (click)="navigate('settings')" title="Подешавања">
       <fa-icon [icon]="faCog"></fa-icon>
     </button>
-    <button class="btn btn-transparent" *ngIf="isInHome" (click)="download()" title="Преузми апликацију">
+    <button class="btn btn-transparent" *ngIf="isInHome && canDownload" (click)="download()" title="Преузми апликацију">
       <fa-icon [icon]="faDownload"></fa-icon>
     </button>
   </div>

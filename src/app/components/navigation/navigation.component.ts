@@ -37,6 +37,7 @@ export class NavigationComponent implements OnInit {
 
   isInGame: boolean = false;
   isInHome: boolean = false;
+  canDownload: boolean = true;
 
   ngOnInit() {
     this._getLoaderWidth();
@@ -44,6 +45,7 @@ export class NavigationComponent implements OnInit {
     this._getTimer();
     this._checkIsInGame();
     this._checkIsInHome();
+    this._canDownload();
   }
 
   fullScreen() {
@@ -122,6 +124,10 @@ export class NavigationComponent implements OnInit {
       .subscribe(inHome => {
         this.isInHome = inHome;
       })
+  }
+
+  private _canDownload(){
+    this.canDownload = this._electronService.isElectron() ? false : true;
   }
 
   download() {
