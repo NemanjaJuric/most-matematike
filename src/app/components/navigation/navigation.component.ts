@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { faWindowMaximize, faWindowMinimize, faMusic, faHome, faHandPointUp, faCog, faUserFriends, faDownload } from '@fortawesome/free-solid-svg-icons';
+import { faWindowMaximize, faWindowMinimize, faMusic, faHome, faHandPointUp, faCog, faUserFriends, faDownload, faUndoAlt } from '@fortawesome/free-solid-svg-icons';
 import { ElectronService } from 'src/app/services/electron.service';
 import { SoundService } from 'src/app/services/sound.service';
 import { TimerService } from 'src/app/services/timer.service';
 import { Router } from '@angular/router';
 import { QuizService } from 'src/app/services/quiz.service';
+import { PastYear } from 'src/app/models/past-year';
 
 @Component({
   selector: 'navigation',
@@ -17,7 +18,7 @@ export class NavigationComponent implements OnInit {
     private _soundService: SoundService,
     private _timerService: TimerService,
     private _router: Router,
-    private _quizService: QuizService
+    private _quizService: QuizService,
   ) { }
 
   faWindowMaximize = faWindowMaximize;
@@ -28,6 +29,7 @@ export class NavigationComponent implements OnInit {
   faCog = faCog;
   faUserFriends = faUserFriends;
   faDownload = faDownload;
+  faUndoAlt = faUndoAlt;
 
   fullScreenFlag: boolean = false;
 
@@ -37,7 +39,11 @@ export class NavigationComponent implements OnInit {
 
   isInGame: boolean = false;
   isInHome: boolean = false;
+  isInTask: boolean = false;
   canDownload: boolean = true;
+
+  showPastYears: boolean = false;
+  pastYearsList: Array<PastYear> = [];
 
   ngOnInit() {
     this._getLoaderWidth();
@@ -46,6 +52,7 @@ export class NavigationComponent implements OnInit {
     this._checkIsInGame();
     this._checkIsInHome();
     this._canDownload();
+    this._isInTask();
   }
 
   fullScreen() {
@@ -138,6 +145,26 @@ export class NavigationComponent implements OnInit {
     document.body.appendChild(element);
     element.click();
     document.body.removeChild(element);
+  }
+
+  pastYears(){
+    this._quizService.getPastYearsList()
+    .subscribe(list => {
+      this.showPastYears = true;
+      this.pastYearsList = list;
+    })
+  }
+
+  startPastYearQuiz(pastYear: PastYear){
+    this._quizService.setPastYearData(pastYear.url);
+    this.showPastYears = false;
+  }
+
+  private _isInTask(){
+    this._quizService.isInTask()
+    .subscribe(s => {
+      this.isInTask = s;
+    })
   }
 
 }

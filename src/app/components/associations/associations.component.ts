@@ -4,6 +4,7 @@ import { faQuestionCircle, faArrowLeft } from '@fortawesome/free-solid-svg-icons
 import { SafeHtml, DomSanitizer } from '@angular/platform-browser';
 import { TaskHelper } from 'src/app/helpers/task.helper';
 import { TimerService } from 'src/app/services/timer.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-associations',
@@ -21,7 +22,9 @@ export class AssociationsComponent implements OnInit, OnDestroy, AfterViewInit {
   faArrowLeft = faArrowLeft;
 
   game: any;
+  private _gameSubs: Subscription;
   final: string = 'Коначно';
+  private _finalRevealed: boolean = false;
   showWindow: boolean = false;
   question: SafeHtml;
   answer: SafeHtml;
@@ -39,10 +42,14 @@ export class AssociationsComponent implements OnInit, OnDestroy, AfterViewInit {
 
   ngOnDestroy() {
     this._quizService.inGame(false);
+    this._quizService.inTask(false);
+    if(this._gameSubs){
+      this._gameSubs.unsubscribe();
+    }
   }
 
   private _getGame() {
-    this._quizService.getGame()
+    this._gameSubs = this._quizService.getGame()
       .subscribe(g => {
         g.columns.forEach(column => {
           column.value = column.name;
@@ -91,6 +98,7 @@ export class AssociationsComponent implements OnInit, OnDestroy, AfterViewInit {
       this.isQuestionShown = true;
       this.showWindow = true;
       this._timerService.startTimer(this.game.time);
+      this._quizService.inTask(true);
     } else {
       field.value = field.name;
       field.opened = false;
@@ -101,6 +109,7 @@ export class AssociationsComponent implements OnInit, OnDestroy, AfterViewInit {
     if (!column.opened) {
       column.value = column.solution;
       column.opened = true;
+      this._quizService.inTask(false);
     } else {
       column.value = column.name;
       column.opened = false;
@@ -108,11 +117,18 @@ export class AssociationsComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   finalSolution() {
-    this.final = this.game.solution;
+    if(!this._finalRevealed){
+      this.final = this.game.solution;
+      this._finalRevealed = true;
+    }else{
+      this.final = 'Коначно';
+      this._finalRevealed = false;
+    }
   }
 
   showAssociations() {
     this.showWindow = false;
+    this._quizService.inTask(false);
     this._timerService.stopTimer();
   }
 
@@ -124,6 +140,7 @@ export class AssociationsComponent implements OnInit, OnDestroy, AfterViewInit {
       this.renderedText = this.question;
       this.isQuestionShown = true;
     }
+    this._quizService.inTask(false);
     this._timerService.stopTimer();
   }
 

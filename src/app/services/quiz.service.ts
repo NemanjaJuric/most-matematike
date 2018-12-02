@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { WebApiService } from './web-api.service';
 import { ReplaySubject, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import { ReplaySubject, Observable } from 'rxjs';
 export class QuizService {
 
   constructor(
-    private _webApiService: WebApiService
+    private _webApiService: WebApiService,
   ) { }
 
   private _data;
@@ -25,6 +26,7 @@ export class QuizService {
 
   private _inGame$: ReplaySubject<boolean> = new ReplaySubject<boolean>(1);
   private _inHome$: ReplaySubject<boolean> = new ReplaySubject<boolean>(1);
+  private _inTask$: ReplaySubject<boolean> = new ReplaySubject<boolean>(1);
 
   tempSetData() {
     this._webApiService.get('assets/config/configuration.json')
@@ -38,7 +40,14 @@ export class QuizService {
     this._data$.next(this._data);
   }
 
-  getData(){
+  setPastYearData(url: string) {
+    this._webApiService.get(url)
+      .subscribe(data => {
+        this.setData(JSON.stringify(data));
+      })
+  }
+
+  getData() {
     return this._data$.asObservable();
   }
 
@@ -47,7 +56,7 @@ export class QuizService {
     this._video$.next(this._video);
   }
 
-  getVideo(){
+  getVideo() {
     return this._video$.asObservable();
   }
 
@@ -84,6 +93,21 @@ export class QuizService {
 
   isInHome() {
     return this._inHome$.asObservable();
+  }
+
+  inTask(status: boolean){
+    this._inTask$.next(status);
+  }
+
+  isInTask() {
+    return this._inTask$.asObservable();
+  }
+
+  getPastYearsList() {
+    return this._webApiService.get('assets/config/past-years/years.json')
+      .pipe(
+        map(res => res['years'])
+      )
   }
 
 }

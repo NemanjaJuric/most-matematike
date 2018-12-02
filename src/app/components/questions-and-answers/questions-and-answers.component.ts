@@ -47,6 +47,7 @@ export class QuestionsAndAnswersComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this._quizService.inGame(false);
+    this._quizService.inTask(false);
     this._deselectAllTasks();
     this._timerService.stopTimer();
     if (this._gameSubs) {
@@ -74,6 +75,7 @@ export class QuestionsAndAnswersComponent implements OnInit, OnDestroy {
         this.renderedText = this.question;
         this._timerService.startTimer(t.time);
         this._isQuestionShown = true;
+        this._quizService.inTask(true);
       } else {
         t.selected = false;
       }
@@ -90,6 +92,7 @@ export class QuestionsAndAnswersComponent implements OnInit, OnDestroy {
       this.renderedText = this.answer;
       this._isQuestionShown = false;
       this._timerService.stopTimer();
+      this._quizService.inTask(false);
     } else {
       this.renderedText = this.question;
       this._isQuestionShown = true;
