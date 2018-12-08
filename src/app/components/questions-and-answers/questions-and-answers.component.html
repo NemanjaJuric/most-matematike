@@ -20,7 +20,7 @@
                         <div *ngIf="videoSelected" class="qa-panel-text">
                             <video #videoWrapper controls></video>
                         </div>
-                        <div *ngIf="!videoSelected" class="qa-panel-text" [innerHtml]="renderedText"></div>
+                        <div *ngIf="!videoSelected" class="qa-panel-text" [innerHTML]="renderedText"></div>
                     </div>
                     <div class="text-right">
                         <button class="btn btn-transparent" (click)="showAnswer()" title="Одговор">

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { QuizService } from 'src/app/services/quiz.service';
 import { Router } from '@angular/router';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-game-chooser',
@@ -10,11 +11,12 @@ export class GameChooserComponent implements OnInit {
 
   constructor(
     private _quizService: QuizService,
-    private _router: Router
+    private _router: Router,
+    private _sanitizer: DomSanitizer,
   ) { }
 
   level: any;
-  description: string;
+  description: SafeHtml;
 
   ngOnInit() {
     this._getLevel();
@@ -28,7 +30,7 @@ export class GameChooserComponent implements OnInit {
   }
 
   showDescription(game: any) {
-    this.description = game.description;
+    this.description = this._sanitizer.bypassSecurityTrustHtml(game.description);
   }
 
   enterGame(game: any) {
