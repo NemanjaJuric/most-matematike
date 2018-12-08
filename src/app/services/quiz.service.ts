@@ -48,6 +48,7 @@ export class QuizService {
   }
 
   getData() {
+    this._data$.next(this._data);
     return this._data$.asObservable();
   }
 

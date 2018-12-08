@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef, OnDestroy } from '@angular/co
 import { QuizService } from 'src/app/services/quiz.service';
 import { Router } from '@angular/router';
 import { faExclamationTriangle, faCog } from '@fortawesome/free-solid-svg-icons';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -18,6 +19,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   faCog = faCog;
 
   data: any;
+  private _dataSubs: Subscription;
   configLoaded: boolean = false;
 
   @ViewChild('heading') heading: ElementRef;
@@ -25,19 +27,25 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this._quizService.inHome(true);
     this._getData();
-    this._quizService.tempSetData();
-  }
-
-  private _getData() {
-    this._quizService.getData()
-      .subscribe(data => {
-        this.data = data;
-        this.configLoaded = this.data ? true : false;
-      })
+    
   }
 
   ngOnDestroy() {
     this._quizService.inHome(false);
+    if(this._dataSubs){
+      this._dataSubs.unsubscribe();
+    }
+  }
+
+  private _getData() {
+    this._dataSubs = this._quizService.getData()
+      .subscribe(data => {
+        this.data = data;
+        this.configLoaded = this.data ? true : false;
+        if(!this.data){
+          this._quizService.tempSetData();
+        }
+      })
   }
 
   goToChooser(level: any) {
