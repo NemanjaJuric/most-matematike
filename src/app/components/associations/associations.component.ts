@@ -43,6 +43,7 @@ export class AssociationsComponent implements OnInit, OnDestroy, AfterViewInit {
   ngOnDestroy() {
     this._quizService.inGame(false);
     this._quizService.inTask(false);
+    this._timerService.stopTimer();
     if(this._gameSubs){
       this._gameSubs.unsubscribe();
     }
