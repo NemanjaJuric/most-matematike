@@ -7,6 +7,7 @@ import { GameChooserGuard } from './guards/game-chooser.guard';
 import { QuestionsAndAnswersComponent } from './components/questions-and-answers/questions-and-answers.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { AssociationsComponent } from './components/associations/associations.component';
+import { TimerComponent } from './components/timer/timer.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,10 @@ const routes: Routes = [
       {
         path: 'settings',
         component: SettingsComponent
+      },
+      {
+        path: 'timer',
+        component: TimerComponent
       },
       {
         path: 'game-chooser',

@@ -1,0 +1,28 @@
+<div class="settings-wrapper">
+  <div class="header">
+    <h1 class="h1">Штоперица</h1>
+  </div>
+  <div class="body">
+    <div class="container-fluid full-height">
+      <div class="row full-height justify-content-center">
+        <div class="col-12 full-height text-center">
+
+          <timepicker class="timepicker" [(ngModel)]="time" [minuteStep]="1" [showSeconds]="true" [secondsStep]="15"
+            [showMeridian]="false"></timepicker>
+
+          <button class="btn btn-transparent" (click)="start()" title="Старт">
+            Старт
+          </button>
+          <button class="btn btn-transparent" (click)="stop()" title="Стоп">
+            Стоп
+          </button>
+          <button class="btn btn-transparent" (click)="restart()" title="Рестарт">
+            Рестарт
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

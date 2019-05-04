@@ -3,7 +3,7 @@
 </div>
 <div class="task-animation" *ngIf="isInTask"></div>
 <div class="navigation d-flex justify-content-between">
-  <div style="width: 350px">
+  <div style="width: 450px">
     <button class="btn btn-transparent" (click)="goHome()" title="Почетни екран">
       <fa-icon [icon]="faHome"></fa-icon>
     </button>
@@ -16,12 +16,16 @@
     <button class="btn btn-transparent" *ngIf="isInHome && canDownload" (click)="download()" title="Преузми апликацију">
       <fa-icon [icon]="faDownload"></fa-icon>
     </button>
+    <button class="btn btn-transparent" *ngIf="isInHome" (click)="navigate('timer')" title="Штоперица">
+      <fa-icon [icon]="faStopwatch"></fa-icon>
+    </button>
   </div>
   <div>
     <span class="time-remaining" *ngIf="timer" [style.color]="loaderColor">{{timer}}</span>
   </div>
-  <div style="width: 350px" class="text-right">
-    <button class="btn btn-transparent" *ngIf="isInHome && canDownload" (click)="pastYears()" title="Претходна такмичења">
+  <div style="width: 450px" class="text-right">
+    <button class="btn btn-transparent" *ngIf="isInHome && canDownload" (click)="pastYears()"
+      title="Претходна такмичења">
       <fa-icon [icon]="faUndoAlt"></fa-icon>
     </button>
     <button class="btn btn-transparent" (click)="toggleMusic()" title="Музика">
@@ -34,6 +38,7 @@
 </div>
 <div class="past-years-wrapper" *ngIf="showPastYears" (click)="showPastYears = false">
   <div class="past-years-window" (click)="$event.stopPropagation()">
-    <button class="btn btn-transparent" *ngFor="let py of pastYearsList" (click)="startPastYearQuiz(py)">{{py.name}}</button>
+    <button class="btn btn-transparent" *ngFor="let py of pastYearsList"
+      (click)="startPastYearQuiz(py)">{{py.name}}</button>
   </div>
 </div>

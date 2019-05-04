@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faWindowMaximize, faWindowMinimize, faMusic, faHome, faHandPointUp, faCog, faUserFriends, faDownload, faUndoAlt } from '@fortawesome/free-solid-svg-icons';
+import { faWindowMaximize, faWindowMinimize, faMusic, faHome, faHandPointUp, faCog, faUserFriends, faDownload, faUndoAlt, faStopwatch } from '@fortawesome/free-solid-svg-icons';
 import { ElectronService } from 'src/app/services/electron.service';
 import { SoundService } from 'src/app/services/sound.service';
 import { TimerService } from 'src/app/services/timer.service';
@@ -30,6 +30,7 @@ export class NavigationComponent implements OnInit {
   faUserFriends = faUserFriends;
   faDownload = faDownload;
   faUndoAlt = faUndoAlt;
+  faStopwatch = faStopwatch;
 
   fullScreenFlag: boolean = false;
 
@@ -133,7 +134,7 @@ export class NavigationComponent implements OnInit {
       })
   }
 
-  private _canDownload(){
+  private _canDownload() {
     this.canDownload = this._electronService.isElectron() ? false : true;
   }
 
@@ -147,24 +148,24 @@ export class NavigationComponent implements OnInit {
     document.body.removeChild(element);
   }
 
-  pastYears(){
+  pastYears() {
     this._quizService.getPastYearsList()
-    .subscribe(list => {
-      this.showPastYears = true;
-      this.pastYearsList = list;
-    })
+      .subscribe(list => {
+        this.showPastYears = true;
+        this.pastYearsList = list;
+      })
   }
 
-  startPastYearQuiz(pastYear: PastYear){
+  startPastYearQuiz(pastYear: PastYear) {
     this._quizService.setPastYearData(pastYear.url);
     this.showPastYears = false;
   }
 
-  private _isInTask(){
+  private _isInTask() {
     this._quizService.isInTask()
-    .subscribe(s => {
-      this.isInTask = s;
-    })
+      .subscribe(s => {
+        this.isInTask = s;
+      })
   }
 
 }

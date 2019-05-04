@@ -23,6 +23,9 @@ import { QuestionsAndAnswersComponent } from './components/questions-and-answers
 import { SettingsComponent } from './components/settings/settings.component';
 import { FileDropModule } from 'ngx-file-drop';
 import { AssociationsComponent } from './components/associations/associations.component';
+import { TimerComponent } from './components/timer/timer.component';
+import { TimepickerModule } from 'ngx-bootstrap/timepicker';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -36,6 +39,7 @@ import { AssociationsComponent } from './components/associations/associations.co
     QuestionsAndAnswersComponent,
     SettingsComponent,
     AssociationsComponent,
+    TimerComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +47,9 @@ import { AssociationsComponent } from './components/associations/associations.co
     HttpClientModule,
     FontAwesomeModule,
     LoadingBarModule.forRoot(),
-    FileDropModule
+    FileDropModule,
+    FormsModule,
+    TimepickerModule.forRoot()
   ],
   providers: [
     ElectronService,
