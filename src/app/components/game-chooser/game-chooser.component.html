@@ -2,9 +2,11 @@
   <div class="container-fluid full-height">
     <div class="row full-height">
       <div class="col-6 full-height">
-        <div *ngFor="let game of level.games" class="game-chooser-item" (mouseenter)="showDescription(game)" (click)="enterGame(game)">
-          {{game.name}}
-        </div>
+        <ng-container *ngFor="let game of level.games">
+          <div *ngIf="game.enabled" class="game-chooser-item" (mouseenter)="showDescription(game)" (click)="enterGame(game)">
+            {{game.name}}
+          </div>
+        </ng-container>
       </div>
       <div class="col-6 full-height">
         <div class="game-description" [innerHtml]="description">

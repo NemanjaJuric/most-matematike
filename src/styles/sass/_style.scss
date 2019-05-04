@@ -213,6 +213,7 @@
     align-items: center;
     .qa-panel-text{
         font-size: $font-xxl;
+        width: 100%;
         @media (min-width: 1280px){
             font-size: $font-xxxl;
         }
@@ -449,4 +450,11 @@ app-associations > div > div.body{
     @media (max-width: 992px) {
         width: 100%;
     }
+}
+
+.image{
+    display: block;
+    position: relative;
+    margin: $margin-sm auto;
+    width: 400px;
 }
