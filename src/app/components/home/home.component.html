@@ -1,5 +1,6 @@
 <div class="home-heading">
   <h1 class="display-3" *ngIf="data && data.name">{{data.name}}</h1>
+  <h3 class="h3 manual-link cursor-pointer" (click)="downloadManual()">Упутство за коришћење</h3>
   <h3 class="h3 warning-color" *ngIf="!configLoaded"><fa-icon [icon]="faExclamationTriangle" class="warning-color"></fa-icon> Конфигурација није учитана</h3>
   <p *ngIf="!configLoaded" class="lead">Молимо учитајте садржај кликом на дугме за подешавања <fa-icon [icon]="faCog"></fa-icon></p>
 </div>

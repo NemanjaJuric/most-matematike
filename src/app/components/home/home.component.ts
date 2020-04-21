@@ -27,12 +27,12 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this._quizService.inHome(true);
     this._getData();
-    
+
   }
 
   ngOnDestroy() {
     this._quizService.inHome(false);
-    if(this._dataSubs){
+    if (this._dataSubs) {
       this._dataSubs.unsubscribe();
     }
   }
@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       .subscribe(data => {
         this.data = data;
         this.configLoaded = this.data ? true : false;
-        if(!this.data){
+        if (!this.data) {
           this._quizService.tempSetData();
         }
       })
@@ -51,6 +51,16 @@ export class HomeComponent implements OnInit, OnDestroy {
   goToChooser(level: any) {
     this._quizService.setLevel(level);
     this._router.navigate(['game-chooser']);
+  }
+
+  downloadManual() {
+    const element = document.createElement('a');
+    element.setAttribute('href', 'assets/documentation/uputstvo.pdf');
+    element.setAttribute('download', 'uputstvo.pdf');
+    element.style.display = 'none';
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
   }
 
 }

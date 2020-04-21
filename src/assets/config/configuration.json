@@ -1,6 +1,6 @@
 {
     "name": "Мост математике",
-    "description": "Школско такмичење 2018/2019",
+    "description": "Млади математичар",
     "videoUrl": "",
     "videoUrlYouTube": "",
     "levels": [
@@ -14,37 +14,133 @@
                     "route": "questions-answers",
                     "video": false,
                     "name": "Математичке питалице",
-                    "description": "Правила игре Математичке питалице",
+                    "description": "За свако питање важи следеће: <br> - За прво питање имате 30 секунди. Такмичар одговарајућег разреда решава самостално овај задатак. <br> - За друго питање имате 1 минут. Овај задатак решавају сви чланови тима заједно. <br> - Тачан одговор на прво питање доноси 4 поена, а на друго 6.",
                     "enabled": true,
                     "tasks": [
                         {
                             "id": "1-1-1",
                             "points": 4,
                             "time": 30,
-                            "name": "Pitanje 1",
+                            "name": "Питање 1",
                             "question": {
-                                "text": "Neki tekst ${1}",
-                                "1": "\\frac{1}{2} + 3"
+                                "text": "Колико реалних решења има једначина ${1}",
+                                "1": "\\newline 2 \\cdot \\mid x - 2 \\mid = 2"
                             },
                             "answer": {
-                                "text": "Neki odgovor ${1}",
-                                "1": "\\frac{1}{2} + 3"
+                                "text": "Два реална решења, ${1}",
+                                "1": "x = 3 \\bigvee x = 1"
                             }
                         },
                         {
                             "id": "1-1-2",
                             "points": 6,
                             "time": 60,
-                            "name": "Pitanje 2 (timsko)",
+                            "name": "Питање 2 (тимско)",
                             "question": {
-                                "text": "Neki tekst za drugo pitanje ${1}. Recenica posle formule.",
-                                "1": "\\frac{1}{2} + 3"
+                                "text": "Одредити реалан параметар ${1} тако да једначина: ${2} има 2 реална решења.",
+                                "1": "a",
+                                "2": "\\newline 2 \\cdot (\\mid x - 2 \\mid + 3) - 2 \\cdot 2 = 2a \\newline"
                             },
                             "answer": {
-                                "text": "Neki odgovor ${1}",
-                                "1": "\\frac{1}{2} + 3"
+                                "text": "${1}",
+                                "1": "a > 1"
                             }
+                            
+                        },
+                        {
+                            "id": "1-1-3",
+                            "points": 4,
+                            "time": 30,
+                            "name": "Питање 3",
+                            "question": {
+                                "text": "Да ли су бројеви 2 и ${1} решења квадратне једначине ${2}",
+                                "1": "\\frac{-3}{2}",
+                                "2": "2x^2 - x - 6 = 0?"
+                            },
+                            "answer": {
+                                "text": "Јесу. Заменом ових бројева добијамо тачне једнакости. Такође, може се проверити и применом Вијетвих формула."
+                            }
+                            
+                        },
+                        {
+                            "id": "1-1-4",
+                            "points": 6,
+                            "time": 60,
+                            "name": "Питање 4 (тимско)",
+                            "question": {
+                                "text": "Решити једначину ${1} за ${2}.",
+                                "1": "\\frac{x^2-1}{\\sqrt{x^2-2x+1}} = 1 + x",
+                                "2": "x > 1"
+                            },
+                            "answer": {
+                                "text": "${1}",
+                                "1": "x > 1"
+                            }
+                            
+                        },
+                        {
+                            "id": "1-1-5",
+                            "points": 4,
+                            "time": 30,
+                            "name": "Питање 5",
+                            "question": {
+                                "text": "Колико реалних решења има једначина ${1}",
+                                "1": "2\\sin(x + \\frac{\\pi}{3}) + 8 = 4?"
+                            },
+                            "answer": {
+                                "text": "Једначина нема реалних решења."
+                            }
+                            
+                        },
+                        {
+                            "id": "1-1-6",
+                            "points": 6,
+                            "time": 60,
+                            "name": "Питање 6 (тимско)",
+                            "question": {
+                                "text": "Једна бочна ивица тростране пирамиде је ${1} и нормална је на остале бочне ивице. Друге две бочне ивице су дужине ${2} и међусобно заклапају угао од ${3}. Колика је запремина ове пирамиде?",
+                                "1": "6cm",
+                                "2": "4cm",
+                                "3": "60^\\circ"
+                            },
+                            "answer": {
+                                "text": "${1}",
+                                "1": "V = 8\\sqrt{3}"
+                            }
+                            
+                        },
+                        {
+                            "id": "1-1-7",
+                            "points": 4,
+                            "time": 30,
+                            "name": "Питање 7",
+                            "question": {
+                                "text": "Одреди нуле функције ${1}:",
+                                "1": "\\newline f(x) = \\frac{x^2-6x+5}{x-1}, x \\in \\R \\setminus \\{1\\}"
+                            },
+                            "answer": {
+                                "text": "Нула функције је ${1}",
+                                "1": "x = 5"
+                            }
+                            
+                        },
+                        {
+                            "id": "1-1-8",
+                            "points": 6,
+                            "time": 60,
+                            "name": "Питање 8 (тимско)",
+                            "question": {
+                                "text": "Одредити параметар ${1} тако да функција: ${2} буде строго растућа на скупу реалних бројева.",
+                                "1": "a",
+                                "2": "f(x) = ax^2 + 5x + 6 \\newline"
+                            },
+                            "answer": {
+                                "text": "${1}",
+                                "1": "a = 0"
+                            }
+                            
                         }
+
                     ]
                 },
                 {
@@ -52,38 +148,108 @@
                     "type": "video-questions",
                     "route": "questions-answers",
                     "video": true,
-                    "videoUrl": "",
-                    "videoUrlYouTube": "",
-                    "name": "Геометријски изазов",
-                    "description": "Правила игре Геометријски изазов",
+                    "name": "Видео игра",
+                    "description": "За свако питање важи следеће: <br> - За прво питање имате 30 секунди. Такмичар одговарајућег разреда решава самостално овај задатак. <br> - За друго питање имате 1 минут. Овај задатак решавају сви чланови тима заједно. <br> - Тачан одговор на прво питање доноси 4 поена.",
                     "enabled": true,
                     "tasks": [
                         {
                             "id": "1-2-1",
                             "points": 4,
                             "time": 30,
-                            "name": "Pitanje 1",
+                            "name": "Питање 1",
                             "question": {
-                                "text": "Neki tekst ${1}",
-                                "1": "\\frac{1}{2} + 3"
+                                "text": "Колико се шестоуглова појављује у клипу?"
                             },
                             "answer": {
-                                "text": "Neki odgovor ${1}",
-                                "1": "\\frac{1}{2} + 3"
+                                "text": "Ниједан"
                             }
                         },
                         {
                             "id": "1-2-2",
                             "points": 6,
                             "time": 60,
-                            "name": "Pitanje 2 (timsko)",
+                            "name": "Питање 2 (тимско)",
                             "question": {
-                                "text": "Neki tekst za drugo pitanje ${1}. Recenica posle formule.",
-                                "1": "\\frac{1}{2} + 3"
+                                "text": "Колико се различитих квадрата укупно појављује у клипу?"
                             },
                             "answer": {
-                                "text": "Neki odgovor ${1}",
-                                "1": "\\frac{1}{2} + 3"
+                                "text": "Три"
+                            }
+                        },
+                        {
+                            "id": "1-2-3",
+                            "points": 4,
+                            "time": 30,
+                            "name": "Питање 3",
+                            "question": {
+                                "text": "Да ли свака од 5 фигура са почетног клипа има неки унутрашњи угао од ${1}",
+                                "1": "90^\\circ"
+                            },
+                            "answer": {
+                                "text": "Да"
+                            }
+                        },
+                        {
+                            "id": "1-2-4",
+                            "points": 6,
+                            "time": 60,
+                            "name": "Питање 4 (тимско)",
+                            "question": {
+                                "text": "Да ли се свака од 5 фигура има пар једнаких унутрашњих углова?"
+                            },
+                            "answer": {
+                                "text": "Да"
+                            }
+                        },
+                        {
+                            "id": "1-2-5",
+                            "points": 4,
+                            "time": 30,
+                            "name": "Питање 5",
+                            "question": {
+                                "text": "Колико има конвексних облика на почетку клипа?"
+                            },
+                            "answer": {
+                                "text": "Један"
+                            }
+                        },
+                        {
+                            "id": "1-2-6",
+                            "points": 6,
+                            "time": 60,
+                            "name": "Питање 6 (тимско)",
+                            "question": {
+                                "text": "Колики су унутрашњи углови неконвексног полигона?"
+                            },
+                            "answer": {
+                                "text": "${1}",
+                                "1": "45^\\circ, 45^\\circ, 90^\\circ, 90^\\circ, 270^\\circ"
+                            }
+                        },
+                        {
+                            "id": "1-2-7",
+                            "points": 4,
+                            "time": 30,
+                            "name": "Питање 7",
+                            "question": {
+                                "text": "Колико су унутрашњи углови конвексног петоугла у клипу?"
+                            },
+                            "answer": {
+                                "text": "${1}",
+                                "1": "90^\\circ, 90^\\circ, 90^\\circ, 135^\\circ, 135^\\circ"
+                            }
+                        },
+                        {
+                            "id": "1-2-8",
+                            "points": 6,
+                            "time": 60,
+                            "name": "Питање 8 (тимско)",
+                            "question": {
+                                "text": "Колики је однос површина малог квадрата и квадрата састављеногод свих 5 фигура?"
+                            },
+                            "answer": {
+                                "text": "${1}",
+                                "1": "1:9"
                             }
                         }
                     ]
@@ -94,65 +260,58 @@
                     "route": "associations",
                     "name": "Математички букет",
                     "description": "Правила игре Математички букет",
-                    "solution": "konacno resenje",
+                    "solution": "Коста Вујић",
                     "time": 15,
                     "enabled": true,
                     "columns": [
                         {
                             "id": "a",
                             "name": "A",
-                            "solution": "resenje kolone A",
+                            "solution": "НЕМАЧКИ",
                             "fields": [
                                 {
                                     "id": "a-1",
                                     "name": "A1",
-                                    "term": "pojam A1",
+                                    "term": "Jезик",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Број који је дељив са 3 дељив је и са 6."
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Нетачно"
                                     }
                                 },
                                 {
                                     "id": "a-2",
                                     "name": "A2",
-                                    "term": "pojam A2",
+                                    "term": "Црвени барон",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Разлика бројева -18 и -25 је -43."
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Нетачно"
                                     }
                                 },
                                 {
                                     "id": "a-3",
                                     "name": "A3",
-                                    "term": "pojam A3",
+                                    "term": "Мерцедес",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Једначина ${1} има тачно једно решење.",
+                                        "1": "\\sqrt{x^2} = 25"
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Нетачно"
                                     }
                                 },
                                 {
                                     "id": "a-4",
                                     "name": "A4",
-                                    "term": "pojam A4",
+                                    "term": "Зид",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Два слична троугла чији је коефицијент сличности k=1 су подударни."
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Тачно"
                                     }
                                 }
                             ],
@@ -160,70 +319,64 @@
                                 {
                                     "id": "a-h-1",
                                     "name": "P1",
-                                    "term": "Појам за помоћ"
+                                    "term": "Берлин"
                                 },
                                 {
                                     "id": "a-h-2",
                                     "name": "P2",
-                                    "term": "Појам за помоћ"
+                                    "term": "Хитлер"
                                 }
                             ]
                         },
                         {
                             "id": "b",
                             "name": "B",
-                            "solution": "resenje kolone B",
+                            "solution": "ШЕШИР",
                             "fields": [
                                 {
                                     "id": "b-1",
                                     "name": "B1",
-                                    "term": "pojam B1",
+                                    "term": "Глава",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "НЗС(14,25)=14∙25."
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Тачно"
                                     }
                                 },
                                 {
                                     "id": "b-2",
                                     "name": "B2",
-                                    "term": "pojam B2",
+                                    "term": "Собреро",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Једначина ${1} има тачно једно решење.",
+                                        "1": "\\mid x+2 \\mid = 6"
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Нетачно"
                                     }
                                 },
                                 {
                                     "id": "b-3",
                                     "name": "B3",
-                                    "term": "pojam B3",
+                                    "term": "Цилиндар",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "${1} је ирационалан број. ",
+                                        "1": "(-\\sqrt(16))^{27}"
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Нетачно"
                                     }
                                 },
                                 {
                                     "id": "b-4",
                                     "name": "B4",
-                                    "term": "pojam B4",
+                                    "term": "Капа",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Две праве које немају заједничких тачака једнозначно одређују раван."
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Нетачно"
                                     }
                                 }
                             ],
@@ -231,70 +384,67 @@
                                 {
                                     "id": "b-h-1",
                                     "name": "P3",
-                                    "term": "Појам за помоћ"
+                                    "term": "Чува"
                                 },
                                 {
                                     "id": "b-h-2",
                                     "name": "P4",
-                                    "term": "Појам за помоћ"
+                                    "term": "Обод"
                                 }
                             ]
                         },
                         {
                             "id": "c",
                             "name": "C",
-                            "solution": "resenje kolone C",
+                            "solution": "ПРОФЕСОР",
                             "fields": [
                                 {
                                     "id": "c-1",
                                     "name": "C1",
-                                    "term": "pojam C1",
+                                    "term": "СТРОГ, АЛИ ПРАВЕДАН",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Централносиметричне праве су паралелне."
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Тачно"
                                     }
                                 },
                                 {
                                     "id": "c-2",
                                     "name": "C2",
-                                    "term": "pojam C2",
+                                    "term": "ПРЕДАВАЊЕ",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Ако је ${1} и ${2} онда је ${3}.",
+                                        "1": "x < 0",
+                                        "2": "xy < 0",
+                                        "3": "y \\geq 0"
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Тачно"
                                     }
                                 },
                                 {
                                     "id": "c-3",
                                     "name": "C3",
-                                    "term": "pojam C3",
+                                    "term": "ШКОЛА",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Вредност израза ${1} је ${2}.",
+                                        "1": "(-1)^{105}+(-1)^{36}-(-1)^{2018}+(-1)^{2019}",
+                                        "2": "-2"
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Тачно"
                                     }
                                 },
                                 {
                                     "id": "c-4",
                                     "name": "C4",
-                                    "term": "pojam C4",
+                                    "term": "Oцена",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Три различите колинеарне тачке одређују три праве."
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Нетачно"
                                     }
                                 }
                             ],
@@ -302,70 +452,65 @@
                                 {
                                     "id": "c-h-1",
                                     "name": "P5",
-                                    "term": "Појам за помоћ"
+                                    "term": "Др."
                                 },
                                 {
                                     "id": "c-h-2",
                                     "name": "P6",
-                                    "term": "Појам за помоћ"
+                                    "term": "Наставник"
                                 }
                             ]
                         },
                         {
                             "id": "d",
                             "name": "D",
-                            "solution": "resenje kolone D",
+                            "solution": "МИКА АЛАС",
                             "fields": [
                                 {
                                     "id": "d-1",
                                     "name": "D1",
-                                    "term": "pojam D1",
+                                    "term": "Математичар",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Најмањи природан број је 0."
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Нетачно"
                                     }
                                 },
                                 {
                                     "id": "d-2",
                                     "name": "D2",
-                                    "term": "pojam D2",
+                                    "term": "Рибар",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Једнакокраки троугао код кога је угао на основици ${1} је тупоугли. ",
+                                        "1": "40^\\circ"
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Тачно"
                                     }
                                 },
                                 {
                                     "id": "d-3",
                                     "name": "D3",
-                                    "term": "pojam D3",
+                                    "term": "Виолиниста",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Дужина странице ${1} је 3. <img src=\"data:image/png;base64,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\" class=\"image\">",
+                                        "1": "x"
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Нетачно"
                                     }
                                 },
                                 {
                                     "id": "d-4",
                                     "name": "D4",
-                                    "term": "pojam D4",
+                                    "term": "Путописац",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Збир решења једначине ${1} је 1.",
+                                        "1": "\\sqrt{(x-1)^2} = 1"
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Тачно"
                                     }
                                 }
                             ],
@@ -373,12 +518,12 @@
                                 {
                                     "id": "d-h-1",
                                     "name": "P7",
-                                    "term": "Појам за помоћ"
+                                    "term": "Aкадемик"
                                 },
                                 {
                                     "id": "d-h-2",
                                     "name": "P8",
-                                    "term": "Појам за помоћ"
+                                    "term": "Велика школа"
                                 }
                             ]
                         }
@@ -396,35 +541,119 @@
                     "route": "questions-answers",
                     "video": false,
                     "name": "Математичке питалице",
-                    "description": "Правила игре Математичке питалице",
+                    "description": "За свако питање важи следеће: <br> - За прво питање имате 30 секунди. Такмичар одговарајућег разреда решава самостално овај задатак. <br> - За друго питање имате 1 минут. Овај задатак решавају сви чланови тима заједно. <br> - Тачан одговор на прво питање доноси 4 поена, а на друго 6.",
                     "enabled": true,
                     "tasks": [
                         {
-                            "id": "2-1-1",
+                            "id": "1-1-1",
                             "points": 4,
                             "time": 30,
-                            "name": "Pitanje 1",
+                            "name": "Питање 1",
                             "question": {
-                                "text": "Neki tekst ${1}",
-                                "1": "\\frac{1}{2} + 3"
+                                "text": "Реши неједначину: ${1}",
+                                "1": "\\mid 2019 - 2018x \\mid \\leq 0"
                             },
                             "answer": {
-                                "text": "Neki odgovor ${1}",
-                                "1": "\\frac{1}{2} + 3"
+                                "text": "${1}${2}",
+                                "1": "\\mid 2019 - 2018x \\mid = 0, ",
+                                "2": "x = \\frac{2019}{2018}"
                             }
                         },
                         {
-                            "id": "2-1-2",
+                            "id": "1-1-2",
                             "points": 6,
                             "time": 60,
-                            "name": "Pitanje 2 (timsko)",
+                            "name": "Питање 2 (тимско)",
                             "question": {
-                                "text": "Neki tekst za drugo pitanje ${1}. Recenica posle formule.",
-                                "1": "\\frac{1}{2} + 3"
+                                "text": "Реши неједначину: ${1}",
+                                "1": "\\frac{(x^{2}+1)\\cdot(x^{2}-6x+5)}{x-5} > 0"
                             },
                             "answer": {
-                                "text": "Neki odgovor ${1}",
-                                "1": "\\frac{1}{2} + 3"
+                                "text": "${1}",
+                                "1": "x\\in(1,5)\\cup(5,+\\infty)"
+                            }
+                        },
+                        {
+                            "id": "1-1-3",
+                            "points": 4,
+                            "time": 30,
+                            "name": "Питање 3",
+                            "question": {
+                                "text": "Реши неједначину: ${1}",
+                                "1": "\\frac{1}{x} < 2"
+                            },
+                            "answer": {
+                                "text": "${1}",
+                                "1": "x\\in(-\\infty,0)\\cup(\\frac{1}{2},+\\infty)"
+                            }
+                        },
+                        {
+                            "id": "1-1-4",
+                            "points": 6,
+                            "time": 60,
+                            "name": "Питање 4 (тимско)",
+                            "question": {
+                                "text": "За које вредности реалног параметра a једначина <br> ${1} има реална и различита решења истог знака?",
+                                "1": "x^{2} + ax + 1 = 0"
+                            },
+                            "answer": {
+                                "text": "${1}",
+                                "1": "x\\in(-\\infty,-2)\\cup(2,+\\infty)"
+                            }
+                        },
+                        {
+                            "id": "1-1-5",
+                            "points": 4,
+                            "time": 30,
+                            "name": "Питање 5",
+                            "question": {
+                                "text": "Ромб чија је страница дужине ${1} има један унутрашњи угао од ${2}. Колико износи дужина краће дијагонале?",
+                                "1": "10cm",
+                                "2": "60^\\circ"
+                            },
+                            "answer": {
+                                "text": "Краћа дијагонала износи ${1}, јер се ромб састоји из два једнакостранична троугла.",
+                                "1": "10cm"
+                            }
+                        },
+                        {
+                            "id": "1-1-6",
+                            "points": 6,
+                            "time": 60,
+                            "name": "Питање 6 (тимско)",
+                            "question": {
+                                "text": "На слици је дата правилна шестострана призма. <img src=\"data:image/png;base64,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 \"class=\"image\"style=\"width:150px;height:200px;\"> Израчунај однос запремина ове призме и њеног шрафираног дела."
+                            },
+                            "answer": {
+                                "text": "${1}",
+                                "1": "V_1 : V_2 = 6 : 1"
+                            }
+                        },
+                        {
+                            "id": "1-1-7",
+                            "points": 4,
+                            "time": 30,
+                            "name": "Питање 7",
+                            "question": {
+                                "text": "Испитати парност функције: <br> ${1}",
+                                "1": "f(x) = x^{26} + 5\\cdot\\mid x \\mid - 256"
+                            },
+                            "answer": {
+                                "text": "Функција је парна."
+                            }
+                        },
+                        {
+                            "id": "1-1-8",
+                            "points": 6,
+                            "time": 60,
+                            "name": "Питање 8 (тимско)",
+                            "question": {
+                                "text": "Реши неједначину: ${1}",
+                                "1": "x^{3} + x^{2} + x < 0"
+                            },
+                            "answer": {
+                                "text": "${1}",
+                                "1": "x < 0"
                             }
                         }
                     ]
@@ -433,39 +662,120 @@
                     "id": "2-2",
                     "type": "video-questions",
                     "route": "questions-answers",
-                    "video": true,
-                    "videoUrl": "",
-                    "videoUrlYouTube": "",
+                    "video": false,
                     "name": "Геометријски изазов",
-                    "description": "Правила игре Геометријски изазов",
+                    "description": "За свако питање важи следеће: <br> - За прво питање имате 30 секунди. Такмичар одговарајућег разреда решава самостално овај задатак. <br> - За друго питање имате 1 минут. Овај задатак решавају сви чланови тима заједно. <br> - Тачан одговор на прво питање доноси 4 поена.",
                     "enabled": true,
                     "tasks": [
+                        {
+                            "id": "1-2-0",
+                            "points": 4,
+                            "time": -1,
+                            "name": "Видео",
+                            "question": {
+                                "text": "Да би сте одговорили на питања, погледајте <a href=\"https://www.youtube.com/watch?v=a-cAxmWK3DQ&fbclid=IwAR3Qk-KgOZrXX9JDMt4tgHaxUpS2F1JqekZn--yxQPXtB8pBmCYMJiU4K6g\" target=\"_blank\" style= \"color: white;\">видео</a>"
+                            },
+                            "answer": {
+                                "text": ""
+                            }
+                        },
                         {
                             "id": "2-2-1",
                             "points": 4,
                             "time": 30,
-                            "name": "Pitanje 1",
+                            "name": "Питање 1",
                             "question": {
-                                "text": "Neki tekst ${1}",
-                                "1": "\\frac{1}{2} + 3"
+                                "text": "Колико оса симетрије има застава Европске уније?"
                             },
                             "answer": {
-                                "text": "Neki odgovor ${1}",
-                                "1": "\\frac{1}{2} + 3"
+                                "text": "Једну"
                             }
                         },
                         {
                             "id": "2-2-2",
                             "points": 6,
                             "time": 60,
-                            "name": "Pitanje 2 (timsko)",
+                            "name": "Питање 2 (тимско)",
                             "question": {
-                                "text": "Neki tekst za drugo pitanje ${1}. Recenica posle formule.",
-                                "1": "\\frac{1}{2} + 3"
+                                "text": "Колико оса симетрије има застава Алжира?"
                             },
                             "answer": {
-                                "text": "Neki odgovor ${1}",
-                                "1": "\\frac{1}{2} + 3"
+                                "text": "Ниједну"
+                            }
+                        },
+                        {
+                            "id": "2-2-3",
+                            "points": 4,
+                            "time": 30,
+                            "name": "Питање 3",
+                            "question": {
+                                "text": "Колико износи збир унутрашњих углова 10 зелених троуглова и зеленог петоугла на клипу (1:50)?"
+                            },
+                            "answer": {
+                                "text": "${1}",
+                                "1": "2340^\\circ"
+                            }
+                        },
+                        {
+                            "id": "2-2-4",
+                            "points": 6,
+                            "time": 60,
+                            "name": "Питање 4 (тимско)",
+                            "question": {
+                                "text": "Колико укупно парова правих на клипу (1:50) заклапа угао ${1}",
+                                "1": "72^\\circ"
+                            },
+                            "answer": {
+                                "text": "20"
+                            }
+                        },
+                        {
+                            "id": "2-2-5",
+                            "points": 4,
+                            "time": 30,
+                            "name": "Питање 5",
+                            "question": {
+                                "text": "Колико се једнакокраких трапеза чије су странице делови црвених и зелених линија на клипу(1:50) могу уочити?"
+                            },
+                            "answer": {
+                                "text": "10"
+                            }
+                        },
+                        {
+                            "id": "2-2-6",
+                            "points": 6,
+                            "time": 60,
+                            "name": "Питање 6 (тимско)",
+                            "question": {
+                                "text": "Колико се паралелограма може уочити на клипу (1:50)?"
+                            },
+                            "answer": {
+                                "text": "5"
+                            }
+                        },
+                        {
+                            "id": "2-2-7",
+                            "points": 4,
+                            "time": 30,
+                            "name": "Питање 7",
+                            "question": {
+                                "text": "Колико износи збир угловима у врховима петокраког зеленог троугла?"
+                            },
+                            "answer": {
+                                "text": "${1}",
+                                "1": "180^\\circ"
+                            }
+                        },
+                        {
+                            "id": "2-2-8",
+                            "points": 6,
+                            "time": 60,
+                            "name": "Питање 8 (тимско)",
+                            "question": {
+                                "text": "Колико се укупно дужи може уочити на клипу (1:50)?"
+                            },
+                            "answer": {
+                                "text": "35"
                             }
                         }
                     ]
@@ -475,66 +785,61 @@
                     "type": "associations",
                     "route": "associations",
                     "name": "Математички букет",
-                    "description": "Правила игре Математички букет",
-                    "solution": "konacno resenje",
+                    "description": "Свако питање је из градива одређеног разреда, а одговор на питање даје члан тима одговарајућег разредa. Тачни одговори износе 2 поена. Уколико се погоди појам у централном кругу тим добија 3 поена. Tим добија 10 поена у случају да погоди главни појам, a уколико нису сви појмови откривени, тим добија и збир поена које носе неоткривена поља.",
+                    "solution": "КОЦКА",
                     "time": 15,
                     "enabled": true,
                     "columns": [
                         {
                             "id": "a",
                             "name": "A",
-                            "solution": "resenje kolone A",
+                            "solution": "КВАДРАТ",
                             "fields": [
                                 {
                                     "id": "a-1",
                                     "name": "A1",
-                                    "term": "pojam A1",
+                                    "term": "страница",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Друга година <br> График функције ${1} је права.",
+                                        "1": "f(x) = (x - 1)(x - 2)"
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Нетачнно, ово је квадратна функција, а њен график је парабола."
                                     }
                                 },
                                 {
                                     "id": "a-2",
                                     "name": "A2",
-                                    "term": "pojam A2",
+                                    "term": "теме",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Четврта година <br> Област дефинисаности функције: <br> ${1} je ${2}.",
+                                        "1": "f(x) = \\log_3 (x - 5)",
+                                        "2": "x > 5"
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Tачно"
                                     }
                                 },
                                 {
                                     "id": "a-3",
                                     "name": "A3",
-                                    "term": "pojam A3",
+                                    "term": "ромб",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Трећа година <br> Пирамида чија је основа ромб је права пирамида."
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Нетачно, јер око ромба није могуће описати кружницу."
                                     }
                                 },
                                 {
                                     "id": "a-4",
                                     "name": "A4",
-                                    "term": "pojam A4",
+                                    "term": "правоугаоник",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Прва година <br> Свака два подударна троугла су слична."
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Тачно"
                                     }
                                 }
                             ],
@@ -542,70 +847,67 @@
                                 {
                                     "id": "a-h-1",
                                     "name": "P1",
-                                    "term": "Појам за помоћ"
+                                    "term": "четвороугао"
                                 },
                                 {
                                     "id": "a-h-2",
                                     "name": "P2",
-                                    "term": "Појам за помоћ"
+                                    "term": "правилни"
                                 }
                             ]
                         },
                         {
                             "id": "b",
                             "name": "B",
-                            "solution": "resenje kolone B",
+                            "solution": "ДИЈАГОНАЛА",
                             "fields": [
                                 {
                                     "id": "b-1",
                                     "name": "B1",
-                                    "term": "pojam B1",
+                                    "term": "дуж",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Четврта година <br> Функција ${1} је парна.",
+                                        "1": "f(x) = \\frac{3x}{x^2 - 1}"
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Нетачно"
                                     }
                                 },
                                 {
                                     "id": "b-2",
                                     "name": "B2",
-                                    "term": "pojam B2",
+                                    "term": "несуседна темена",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Прва година <br> Једини цели бројеви који представљају заједничка решења неједначина ${1} и ${2} су 0 и 1.",
+                                        "1": "x \\geq 0",
+                                        "2": "x < 1.2"
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Тачно"
                                     }
                                 },
                                 {
                                     "id": "b-3",
                                     "name": "B3",
-                                    "term": "pojam B3",
+                                    "term": "многоугао",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Трећа година <br> Угао између бочне ивице и основе праве призме је прав."
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Тачно"
                                     }
                                 },
                                 {
                                     "id": "b-4",
                                     "name": "B4",
-                                    "term": "pojam B4",
+                                    "term": "n-3",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Друга година <br> Модуо комплексног броја ${1} је рационалан број.",
+                                        "1": "z = 4i + 3"
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Tачно, ${1}.",
+                                        "1": "\\mid z \\mid = \\sqrt{4^2 + 3^2} = \\sqrt{25} = 5 \\in Q"
                                     }
                                 }
                             ],
@@ -613,70 +915,70 @@
                                 {
                                     "id": "b-h-1",
                                     "name": "P3",
-                                    "term": "Појам за помоћ"
+                                    "term": "n(n-3)/2"
                                 },
                                 {
                                     "id": "b-h-2",
                                     "name": "P4",
-                                    "term": "Појам за помоћ"
+                                    "term": "пресек"
                                 }
                             ]
                         },
                         {
                             "id": "c",
                             "name": "C",
-                            "solution": "resenje kolone C",
+                            "solution": "ИВИЦА",
                             "fields": [
                                 {
                                     "id": "c-1",
                                     "name": "C1",
-                                    "term": "pojam C1",
+                                    "term": "страница",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Прва година <br> Вредност израза ${1} је природан број.",
+                                        "1": "(3.75 + \\frac{1}{4}):(1\\frac{1}{2} + 0.5)"
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Taчно, вредност израза је 2."
                                     }
                                 },
                                 {
                                     "id": "c-2",
                                     "name": "C2",
-                                    "term": "pojam C2",
+                                    "term": "бочна",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Трећа година <br> Скаларни производ вектора је вектор."
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Нетачно"
                                     }
                                 },
                                 {
                                     "id": "c-3",
                                     "name": "C3",
-                                    "term": "pojam C3",
+                                    "term": "основна",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Друга година <br> Вредност израза ${1} је рационалан број.",
+                                        "1": "2^{-\\frac{1}{2}} + 2^{\\frac{1}{2}}"
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Нетачно, јер је ${1}, што није рационалан број.",
+                                        "1": "2^{-\\frac{1}{2}} + 2^{\\frac{1}{2}} = \\frac{1}{\\sqrt{2}} + \\sqrt{2} = \\frac{\\sqrt{2}}{2} + \\sqrt{2} = \\frac{3\\sqrt{2}}{2}"
                                     }
                                 },
                                 {
                                     "id": "c-4",
                                     "name": "C4",
-                                    "term": "pojam C4",
+                                    "term": "6",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Четврта година <br> Ако је ${1} и ${2}, тада је ${3}.",
+                                        "1": "f(x) = \\frac{x^2}{x}",
+                                        "2": "g(x) = x",
+                                        "3": "f = g"
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Нетачно, функција ${1} није дефинисана у тачки ${2}.",
+                                        "1": "f(x) = \\frac{x^2}{x}",
+                                        "2": "x = 0"
                                     }
                                 }
                             ],
@@ -684,70 +986,69 @@
                                 {
                                     "id": "c-h-1",
                                     "name": "P5",
-                                    "term": "Појам за помоћ"
+                                    "term": "12"
                                 },
                                 {
                                     "id": "c-h-2",
                                     "name": "P6",
-                                    "term": "Појам за помоћ"
+                                    "term": "заједничка"
                                 }
                             ]
                         },
                         {
                             "id": "d",
                             "name": "D",
-                            "solution": "resenje kolone D",
+                            "solution": "ЗАПРЕМИНА",
                             "fields": [
                                 {
                                     "id": "d-1",
                                     "name": "D1",
-                                    "term": "pojam D1",
+                                    "term": "мера",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Трећа година <br>  Најмањи број једнакостраничних троуглова од којих је могуће саставити геометријско тело без деформације троугла је 8."
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Нетачно, потребно је најмање 4 једнакостранична троугла."
                                     }
                                 },
                                 {
                                     "id": "d-2",
                                     "name": "D2",
-                                    "term": "pojam D2",
+                                    "term": "литар",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Прва година <br>  За ненегативне вредности параметра ${1} је линеарна функција ${2} опадајућа.",
+                                        "1": "a",
+                                        "2": "y = -2018ax - 2019"
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Нетачно"
                                     }
                                 },
                                 {
                                     "id": "d-3",
                                     "name": "D3",
-                                    "term": "pojam D3",
+                                    "term": "површина",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Друга година <br> График функције ${1} сече ${2} у две различите тачке.",
+                                        "1": "f(x) = x^2 + 2x + 1",
+                                        "2": "x - осу"
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Нетачно, график додирује ${1} у тачки ${2}.",
+                                        "1": "x - осу",
+                                        "2": "x = -1"
                                     }
                                 },
                                 {
                                     "id": "d-4",
                                     "name": "D4",
-                                    "term": "pojam D4",
+                                    "term": "кубни метар",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Четврта година <br> ${1}",
+                                        "1": "lim_{x\\rightarrow2}\\frac{x^2-4}{x-2} = 4"
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Тачно"
                                     }
                                 }
                             ],
@@ -755,12 +1056,12 @@
                                 {
                                     "id": "d-h-1",
                                     "name": "P7",
-                                    "term": "Појам за помоћ"
+                                    "term": "геометријско тело"
                                 },
                                 {
                                     "id": "d-h-2",
                                     "name": "P8",
-                                    "term": "Појам за помоћ"
+                                    "term": "кубни дециметар"
                                 }
                             ]
                         }
@@ -769,154 +1070,320 @@
             ]
         },
         {
-            "id": "3",
-            "name": "Средња школа 2",
+            "id": "1",
+            "name": "Гимназија",
             "games": [
                 {
-                    "id": "3-1",
+                    "id": "1-1",
                     "type": "questions-answers",
                     "route": "questions-answers",
                     "video": false,
                     "name": "Математичке питалице",
-                    "description": "Правила игре Математичке питалице",
+                    "description": "За свако питање важи следеће: <br> - За прво питање имате 40 секунди. Такмичар одговарајућег разреда решава самостално овај задатак. <br> - За друго питање имате 70 секунди. Овај задатак решавају сви чланови тима заједно. <br> - Тачан одговор на прво питање доноси 4 поена, а на друго 6.",
                     "enabled": true,
                     "tasks": [
                         {
-                            "id": "3-1-1",
+                            "id": "1-1-1",
                             "points": 4,
-                            "time": 30,
-                            "name": "Pitanje 1",
+                            "time": 40,
+                            "name": "Питање 1",
                             "question": {
-                                "text": "Neki tekst ${1}",
-                                "1": "\\frac{1}{2} + 3"
+                                "text": "Испитати истининост следећег исказа: <br> ${1}",
+                                "1": "p \\wedge q \\Rightarrow p"
                             },
                             "answer": {
-                                "text": "Neki odgovor ${1}",
-                                "1": "\\frac{1}{2} + 3"
+                                "text": "Исказ је тачан (таутологија)"
                             }
                         },
                         {
-                            "id": "3-1-2",
+                            "id": "1-1-2",
                             "points": 6,
-                            "time": 60,
-                            "name": "Pitanje 2 (timsko)",
+                            "time": 70,
+                            "name": "Питање 2 (тимско)",
                             "question": {
-                                "text": "Neki tekst za drugo pitanje ${1}. Recenica posle formule.",
-                                "1": "\\frac{1}{2} + 3"
+                                "text": "<p style = \"font-size: 26px\">Током једног дана Марко говори или само истину или лаже. Једног дана Марко је изговорио 4 од понуђених 5 реченица: <br> (А) Број учеика у мом одељењу је сложен број. <br> (Б) Не говорим увек истину. <br> (В) Мој брат је млађи од мене. <br> (Г) Производ 2 проста броја увек је непаран број. <br> (Д) Број 2019 није дељив са 6. <br> Коју од 5 реченица Марко није изговорио тог дана?"
                             },
                             "answer": {
-                                "text": "Neki odgovor ${1}",
-                                "1": "\\frac{1}{2} + 3"
+                                "text": "<p style = \"font-size: 26px\">Г <br> Реченица Г је нетачна, Б и Д су тачне, док се за остале не може одредити истинитна вредност. У току дана, Марко није изговорио или реченицу Г или реченице Б и Д. Само једна од понуђених 5 реченица није изговорио, па је то реченица Г."
                             }
+                            
+                        },
+                        {
+                            "id": "1-1-3",
+                            "points": 4,
+                            "time": 40,
+                            "name": "Питање 3",
+                            "question": {
+                                "text": "Упоредити бројеве: ${1} и ${2}",
+                                "1": "A = \\sqrt[3]{14}",
+                                "2": "B = \\sqrt{6}"
+                            },
+                            "answer": {
+                                "text": "${1}",
+                                "1": "A < B"
+                            }
+                            
+                        },
+                        {
+                            "id": "1-1-4",
+                            "points": 6,
+                            "time": 70,
+                            "name": "Питање 4 (тимско)",
+                            "question": {
+                                "text": "Да ли важи: <br> ${1}",
+                                "1": "(\\sqrt{5}-2)\\sqrt[3]{72+32\\sqrt{5}} = \\sqrt{5}-1"
+                            },
+                            "answer": {
+                                "text": "Да"
+                            }
+                            
+                        },
+                        {
+                            "id": "1-1-5",
+                            "points": 4,
+                            "time": 40,
+                            "name": "Питање 5",
+                            "question": {
+                                "text": "Израчунај површину ромба чија је висина ${1} и туп угао је ${2}",
+                                "1": "\\sqrt{5}",
+                                "2": "120^\\circ"
+                            },
+                            "answer": {
+                                "text": "${1}",
+                                "1": "P = \\frac{10}{3}\\sqrt{3}"
+                            }
+                            
+                        },
+                        {
+                            "id": "1-1-6",
+                            "points": 6,
+                            "time": 70,
+                            "name": "Питање 6 (тимско)",
+                            "question": {
+                                "text": "Реши неједначину: <br> ${1} на интервалу ${2}",
+                                "1": "4\\sin(x-\\frac{\\pi}{4}) + 3 < 5",
+                                "2": "[-\\pi, \\pi]"
+                            },
+                            "answer": {
+                                "text": "${1}",
+                                "1": "x \\in (-\\frac{11\\pi}{12}, \\frac{5\\pi}{12})"
+                            }
+                            
+                        },
+                        {
+                            "id": "1-1-7",
+                            "points": 4,
+                            "time": 40,
+                            "name": "Питање 7",
+                            "question": {
+                                "text": "Одреди домен функције <br> ${1}.",
+                                "1": "y = \\arcsin(x^2 + 3x + 3)"
+                            },
+                            "answer": {
+                                "text": "${1}",
+                                "1": "x \\in [-2, -1]"
+                            }
+                            
+                        },
+                        {
+                            "id": "1-1-8",
+                            "points": 6,
+                            "time": 70,
+                            "name": "Питање 8 (тимско)",
+                            "question": {
+                                "text": "На шаховском турниру одиграно је 210 партија. Ако сваки учесник играo са сваким, одредити број учесника турнира."
+                            },
+                            "answer": {
+                                "text": "<p style = \"font-size: 32px\">${1} ${2} ${3}",
+                                "1": "\\frac{x \\cdot (x-1)}{2} = 210 \\Rightarrow x(x-1) = 420 \\newline",
+                                "2": "x(x-1) = 2 \\cdot 2 \\cdot 3 \\cdot 5 \\cdot 7 \\Rightarrow x(x - 1) = 21 \\cdot 20 \\newline",
+                                "3": "x = 21"
+                            }
+                            
                         }
+
                     ]
                 },
                 {
-                    "id": "3-2",
+                    "id": "1-2",
                     "type": "video-questions",
                     "route": "questions-answers",
-                    "video": true,
-                    "videoUrl": "",
-                    "videoUrlYouTube": "",
-                    "name": "Геометријски изазов",
-                    "description": "Правила игре Геометријски изазов",
+                    "video": false,
+                    "name": "Видео игра",
+                    "description": "За свако питање важи следеће: <br> - За прво питање имате 40 секунди. Такмичар одговарајућег разреда решава самостално овај задатак. <br> - За друго питање имате 70 секунди. Овај задатак решавају сви чланови тима заједно. <br> - Тачан одговор на прво питање доноси 4 поена.",
                     "enabled": true,
                     "tasks": [
                         {
-                            "id": "3-2-1",
+                            "id": "1-2-0",
                             "points": 4,
-                            "time": 30,
-                            "name": "Pitanje 1",
+                            "time": -1,
+                            "name": "Видео",
                             "question": {
-                                "text": "Neki tekst ${1}",
-                                "1": "\\frac{1}{2} + 3"
+                                "text": "Да би сте одговорили на питања, погледајте <a href=\"https://www.youtube.com/watch?v=V08g_lkKj6Q&amp=&fbclid=IwAR06hdyNifVQMsWfWQ_D3le1Nk6xjf-ZAQTjg3aP6OzvN1ODcOxoADqWzRU\" target=\"_blank\" style= \"color: white;\">видео</a>"
                             },
                             "answer": {
-                                "text": "Neki odgovor ${1}",
-                                "1": "\\frac{1}{2} + 3"
+                                "text": ""
                             }
                         },
                         {
-                            "id": "3-2-2",
-                            "points": 6,
-                            "time": 60,
-                            "name": "Pitanje 2 (timsko)",
+                            "id": "1-2-1",
+                            "points": 4,
+                            "time": 40,
+                            "name": "Питање 1",
                             "question": {
-                                "text": "Neki tekst za drugo pitanje ${1}. Recenica posle formule.",
-                                "1": "\\frac{1}{2} + 3"
+                                "text": "Да ли је је 1 прост број?"
                             },
                             "answer": {
-                                "text": "Neki odgovor ${1}",
-                                "1": "\\frac{1}{2} + 3"
+                                "text": "Нe"
+                            }
+                        },
+                        {
+                            "id": "1-2-2",
+                            "points": 6,
+                            "time": 70,
+                            "name": "Питање 2 (тимско)",
+                            "question": {
+                                "text": "Колико има простих бројева мањих од 100?"
+                            },
+                            "answer": {
+                                "text": "25"
+                            }
+                        },
+                        {
+                            "id": "1-2-3",
+                            "points": 4,
+                            "time": 40,
+                            "name": "Питање 3",
+                            "question": {
+                                "text": "Колико је укупно темена квадрата у Ератостеновом ситу?"
+                            },
+                            "answer": {
+                                "text": "121"
+                            }
+                        },
+                        {
+                            "id": "1-2-4",
+                            "points": 6,
+                            "time": 70,
+                            "name": "Питање 4 (тимско)",
+                            "question": {
+                                "text": "Колико је јединичних дужи у Ератостеновом ситу на клипу?"
+                            },
+                            "answer": {
+                                "text": "220"
+                            }
+                        },
+                        {
+                            "id": "1-2-5",
+                            "points": 4,
+                            "time": 40,
+                            "name": "Питање 5",
+                            "question": {
+                                "text": "Колико има бројева у Ератостеновом ситу на клипу који су дељиви са 3, а нису са 2?"
+                            },
+                            "answer": {
+                                "text": "17"
+                            }
+                        },
+                        {
+                            "id": "1-2-6",
+                            "points": 6,
+                            "time": 70,
+                            "name": "Питање 6 (тимско)",
+                            "question": {
+                                "text": "Међу првих 100 природних бројева, на коју се цифру завршава највише простих бројева?"
+                            },
+                            "answer": {
+                                "text": "На цифру 3."
+                            }
+                        },
+                        {
+                            "id": "1-2-7",
+                            "points": 4,
+                            "time": 40,
+                            "name": "Питање 7",
+                            "question": {
+                                "text": "Колико се укупно правоугаоника може уочити од линија које формирају Ератостеново сито на клипу?"
+                            },
+                            "answer": {
+                                "text": "${1}",
+                                "1": "55^2 = 3025"
+                            }
+                        },
+                        {
+                            "id": "1-2-8",
+                            "points": 6,
+                            "time": 70,
+                            "name": "Питање 8 (тимско)",
+                            "question": {
+                                "text": "Колико се укупно квадрата може уочити од линија које формирају Ератостеново сито на клипу ?"
+                            },
+                            "answer": {
+                                "text": "${1}",
+                                "1": "10^2 + 9^2 + ... + 1^2 = \\frac{10*11*21}{6} = 385"
                             }
                         }
                     ]
                 },
                 {
-                    "id": "3-3",
+                    "id": "1-3",
                     "type": "associations",
                     "route": "associations",
                     "name": "Математички букет",
-                    "description": "Правила игре Математички букет",
-                    "solution": "konacno resenje",
-                    "time": 15,
-                    
+                    "description": "Свако питање је из градива одређеног разреда, а одговор на питање даје члан тима одговарајућег разредa. Тачни одговори износе 2 поена. Уколико се погоди појам у централном кругу тим добија 3 поена. Tим добија 10 поена у случају да погоди главни појам, a уколико нису сви појмови откривени, тим добија и збир поена које носе неоткривена поља.",
+                    "solution": "КОРЕН",
+                    "time": 20,
+                    "enabled": true,
                     "columns": [
                         {
                             "id": "a",
                             "name": "A",
-                            "solution": "resenje kolone A",
+                            "solution": "Квадрат",
                             "fields": [
                                 {
                                     "id": "a-1",
                                     "name": "A1",
-                                    "term": "pojam A1",
+                                    "term": "Паралелограм",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Друга година <br><br> Да ли корен неког броја може имати две вредности?"
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Нетачно"
                                     }
                                 },
                                 {
                                     "id": "a-2",
                                     "name": "A2",
-                                    "term": "pojam A2",
+                                    "term": "Ромб",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Четврта година <br><br> Функција ${1} има једну реалну нулу?",
+                                        "1": "f(x) = 2^x"
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Нетачно, нема реалне нуле."
                                     }
                                 },
                                 {
                                     "id": "a-3",
                                     "name": "A3",
-                                    "term": "pojam A3",
+                                    "term": "Дијагонала",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Прва година <br><br> Да ли је следећи израз тачан: <br> ${1}",
+                                        "1": "(2\\frac{1}{3} + \\frac{5}{6}\\cdot 4): \\frac{2}{3} = 17"
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Нетачно"
                                     }
                                 },
                                 {
                                     "id": "a-4",
                                     "name": "A4",
-                                    "term": "pojam A4",
+                                    "term": "Прав угао",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Трећа година <br><br> Сваки трапез је осно симетрична фигура."
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Нетачно"
                                     }
                                 }
                             ],
@@ -924,70 +1391,66 @@
                                 {
                                     "id": "a-h-1",
                                     "name": "P1",
-                                    "term": "Појам за помоћ"
+                                    "term": "правоугаоник"
                                 },
                                 {
                                     "id": "a-h-2",
                                     "name": "P2",
-                                    "term": "Појам за помоћ"
+                                    "term": "a^2"
                                 }
                             ]
                         },
                         {
                             "id": "b",
                             "name": "B",
-                            "solution": "resenje kolone B",
+                            "solution": "Аритметички",
                             "fields": [
                                 {
                                     "id": "b-1",
                                     "name": "B1",
-                                    "term": "pojam B1",
+                                    "term": "Низ",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Трећа година <br><br> Равни су паралелне ако немају заједничких тачака?"
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Тачно"
                                     }
                                 },
                                 {
                                     "id": "b-2",
                                     "name": "B2",
-                                    "term": "pojam B2",
+                                    "term": "Средина",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Друга година <br><br> Да ли је тачно ${1}",
+                                        "1": "\\sqrt{x^2} = x"
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Нетачно, ${1}",
+                                        "1": "\\sqrt{x^2} = \\mid x \\mid"
                                     }
                                 },
                                 {
                                     "id": "b-3",
                                     "name": "B3",
-                                    "term": "pojam B3",
+                                    "term": "Геометријски",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Четврта година <br><br> Домен фукције ${1} је ${2} ",
+                                        "1": "y = \\sqrt[3]{\\frac{x+3}{x^2+1}}",
+                                        "2": "x \\neq -1"
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Нетачно"
                                     }
                                 },
                                 {
                                     "id": "b-4",
                                     "name": "B4",
-                                    "term": "pojam B4",
+                                    "term": "d",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Прва година <br><br> Збир непарног броја парних бројева је непаран број?"
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Нетачно"
                                     }
                                 }
                             ],
@@ -995,70 +1458,66 @@
                                 {
                                     "id": "b-h-1",
                                     "name": "P3",
-                                    "term": "Појам за помоћ"
+                                    "term": "прогресија"
                                 },
                                 {
                                     "id": "b-h-2",
                                     "name": "P4",
-                                    "term": "Појам за помоћ"
+                                    "term": "стална разлика"
                                 }
                             ]
                         },
                         {
                             "id": "c",
                             "name": "C",
-                            "solution": "resenje kolone C",
+                            "solution": "Операција",
                             "fields": [
                                 {
                                     "id": "c-1",
                                     "name": "C1",
-                                    "term": "pojam C1",
+                                    "term": "Ознака",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Прва година <br> Скуп природних бројева има највећи елемент?"
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Нетачно"
                                     }
                                 },
                                 {
                                     "id": "c-2",
                                     "name": "C2",
-                                    "term": "pojam C2",
+                                    "term": "Рачун",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Трећа година <br><br> Центар описаног круга око правоуглог троугла се налази на средини средини тежешне линије која одговара дужој катети?"
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Нетачно, налази се на средини хипотенузе."
                                     }
                                 },
                                 {
                                     "id": "c-3",
                                     "name": "C3",
-                                    "term": "pojam C3",
+                                    "term": "Извршавање",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Четврта година <br><br> Инверзна функција функције ${1} је ${2}.",
+                                        "1": "lnx",
+                                        "2": "e^x"
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Тачно"
                                     }
                                 },
                                 {
                                     "id": "c-4",
                                     "name": "C4",
-                                    "term": "pojam C4",
+                                    "term": "Множење",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Друга година <br><br> Да ли је ${1} решење једначине: <br> ${2}",
+                                        "1": "\\frac{1}{2}",
+                                        "2": "\\frac{2x^3-x^4}{2x^2+x-1}"
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Нетачно"
                                     }
                                 }
                             ],
@@ -1066,70 +1525,70 @@
                                 {
                                     "id": "c-h-1",
                                     "name": "P5",
-                                    "term": "Појам за помоћ"
+                                    "term": "квадрирање"
                                 },
                                 {
                                     "id": "c-h-2",
                                     "name": "P6",
-                                    "term": "Појам за помоћ"
+                                    "term": "минус"
                                 }
                             ]
                         },
                         {
                             "id": "d",
                             "name": "D",
-                            "solution": "resenje kolone D",
+                            "solution": "Кубни",
                             "fields": [
                                 {
                                     "id": "d-1",
                                     "name": "D1",
-                                    "term": "pojam D1",
+                                    "term": "Запремина",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Друга година <br><br> Имагинарни део комплексног броја ${1}, где је ${2}, ${3} је 7?",
+                                        "1": "z_1 + z_2",
+                                        "2": "z_1 = 3 + 2i",
+                                        "3": "z_2 = -2 + 5i"
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Тачно"
                                     }
                                 },
                                 {
                                     "id": "d-2",
                                     "name": "D2",
-                                    "term": "pojam D2",
+                                    "term": "3",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Прва година <br><br> Композиција функције ${1} за дате функције ${2} и ${3} је ${4}",
+                                        "1": "f \\circ g ",
+                                        "2": "f(x) = 4x + 2",
+                                        "3": "g(x) = 3x",
+                                        "4": "12x+2"
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Тачно"
                                     }
                                 },
                                 {
                                     "id": "d-3",
                                     "name": "D3",
-                                    "term": "pojam D3",
+                                    "term": "Парабола",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Трећа година <br><br> Да ли се око сваког ромба може описати круг?"
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Нетачно"
                                     }
                                 },
                                 {
                                     "id": "d-4",
                                     "name": "D4",
-                                    "term": "pojam D4",
+                                    "term": "Метар",
                                     "question": {
-                                        "text": "Neki tekst ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Четврта година <br><br> Да ли је функција ${1} бијекција?",
+                                        "1": "y = x^4"
                                     },
                                     "answer": {
-                                        "text": "Neki odgovor ${1}",
-                                        "1": "\\frac{1}{2} + 3"
+                                        "text": "Нетачно, није \"1-1\""
                                     }
                                 }
                             ],
@@ -1137,12 +1596,12 @@
                                 {
                                     "id": "d-h-1",
                                     "name": "P7",
-                                    "term": "Појам за помоћ"
+                                    "term": "центиметар"
                                 },
                                 {
                                     "id": "d-h-2",
                                     "name": "P8",
-                                    "term": "Појам за помоћ"
+                                    "term": "дециметар"
                                 }
                             ]
                         }

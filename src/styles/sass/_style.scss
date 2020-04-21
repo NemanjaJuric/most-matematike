@@ -47,6 +47,12 @@
     font-size: $font-xxl;
 }
 
+.manual-link{
+    &:hover{
+        color: $light-color;
+    }
+}
+
 // NAVIGATION
 
 .navigation{

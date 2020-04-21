@@ -139,7 +139,7 @@ export class NavigationComponent implements OnInit {
   }
 
   download() {
-    var element = document.createElement('a');
+    const element = document.createElement('a');
     element.setAttribute('href', 'most-matematike.exe');
     element.setAttribute('download', 'most-matematike.exe');
     element.style.display = 'none';
